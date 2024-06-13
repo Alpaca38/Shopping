@@ -28,6 +28,11 @@
 		D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B52C1B0145004BA146 /* SceneManager.swift */; };
 		D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */; };
 		D18160BA2C1B09CC004BA146 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B92C1B09CC004BA146 /* Button.swift */; };
+		D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */; };
+		D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */; };
+		D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */; };
+		D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C32C1B22E8004BA146 /* LiteralString.swift */; };
+		D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C72C1B27BB004BA146 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +54,11 @@
 		D18160B52C1B0145004BA146 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D18160B92C1B09CC004BA146 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextField.swift; sourceTree = "<group>"; };
+		D18160C32C1B22E8004BA146 /* LiteralString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteralString.swift; sourceTree = "<group>"; };
+		D18160C72C1B27BB004BA146 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */,
+				D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -123,6 +134,9 @@
 			children = (
 				D18160A42C1AF4B8004BA146 /* TabBarController.swift */,
 				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
+				D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */,
+				D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */,
+				D18160C72C1B27BB004BA146 /* CustomButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 				D18160AE2C1AF8BC004BA146 /* Font.swift */,
 				D18160B02C1AFA10004BA146 /* Image.swift */,
 				D18160B92C1B09CC004BA146 /* Button.swift */,
+				D18160C32C1B22E8004BA146 /* LiteralString.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -242,8 +257,11 @@
 			files = (
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
+				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
+				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
+				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
@@ -251,8 +269,10 @@
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
+				D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */,
 				D18160BA2C1B09CC004BA146 /* Button.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
+				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

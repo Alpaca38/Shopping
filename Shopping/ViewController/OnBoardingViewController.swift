@@ -29,14 +29,8 @@ class OnBoardingViewController: BaseViewController {
     }()
     
     lazy var startButton = {
-        let button = UIButton()
-        button.setAttributedTitle(NSAttributedString(string: "시작하기", attributes: [.font: Font.boldTitle]), for: .normal)
-        button.setTitle("시작하기", for: .normal)
-        button.setTitleColor(Color.white, for: .normal)
-        button.titleLabel?.font = Font.boldContent
-        button.clipsToBounds = true
-        button.layer.cornerRadius = Button.radius
-        button.backgroundColor = Color.main
+        let button = CustomButton(title: "시작하기")
+        button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         self.view.addSubview(button)
         return button
     }()
@@ -46,6 +40,9 @@ class OnBoardingViewController: BaseViewController {
         configureLayout()
     }
     
+}
+
+extension OnBoardingViewController {
     func configureLayout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(63)
@@ -59,12 +56,13 @@ class OnBoardingViewController: BaseViewController {
         
         startButton.snp.makeConstraints {
             $0.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
-            $0.height.equalTo(Button.height)
         }
-        
-        
     }
-
-
 }
 
+extension OnBoardingViewController {
+    @objc func startButtonTapped() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}

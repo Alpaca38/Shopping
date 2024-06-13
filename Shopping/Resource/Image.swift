@@ -19,53 +19,54 @@ enum Image {
     static let likeSelected = UIImage(named: "like_selected")
     static let likeUnSelected = UIImage(named: "like_unselected")
     
-    enum Profile {
+    enum Profile: CaseIterable {
         case one, two, three, four, five, six, seven, eight, nine, ten, eleven, tweleve
         
-        var image: UIImage? {
+        var profileImage: UIImage? {
             switch self {
             case .one:
                 return UIImage(named: "profile_0")
             case .two:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_1")
             case .three:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_2")
             case .four:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_3")
             case .five:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_4")
             case .six:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_5")
             case .seven:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_6")
             case .eight:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_7")
             case .nine:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_8")
             case .ten:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_9")
             case .eleven:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_10")
             case .tweleve:
-                return UIImage(named: "profile_0")
+                return UIImage(named: "profile_11")
             }
         }
     }
     
-    enum Border: CGFloat {
-        case active = 3
-        case inActive = 1
+    enum Border {
+        static let active: CGFloat = 3
+        static let inActive: CGFloat = 1
     }
     
-    enum Alpha: CGFloat {
-        case active = 1
-        case inActive = 0.5
+    enum Alpha {
+        static let active: CGFloat = 1
+        static let inActive: CGFloat = 0.5
     }
     
-    enum Size: CGFloat {
-        case launch
-        case bigProfile
-        case smallProfile
-        
+    enum Size {
+        static let bigProfile: CGFloat = 100
+        static let smallProfile: CGFloat = 80
+        static let camera: CGFloat = 25
+        static let clock: CGFloat = 10
+        static let xmark: CGFloat = 10
     }
 }
