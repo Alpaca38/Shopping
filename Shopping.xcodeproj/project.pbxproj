@@ -14,6 +14,12 @@
 		D18160852C1AF150004BA146 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D18160842C1AF150004BA146 /* Base */; };
 		D181608F2C1AF3C2004BA146 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D181608E2C1AF3C2004BA146 /* .gitignore */; };
 		D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160912C1AF3DD004BA146 /* APIKey.swift */; };
+		D18160962C1AF458004BA146 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D18160952C1AF458004BA146 /* IQKeyboardManagerSwift */; };
+		D18160992C1AF45E004BA146 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D18160982C1AF45E004BA146 /* Toast */; };
+		D181609C2C1AF466004BA146 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D181609B2C1AF466004BA146 /* Kingfisher */; };
+		D181609F2C1AF46F004BA146 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D181609E2C1AF46F004BA146 /* Alamofire */; };
+		D18160A22C1AF482004BA146 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D18160A12C1AF482004BA146 /* SnapKit */; };
+		D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160A42C1AF4B8004BA146 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,7 @@
 		D18160862C1AF150004BA146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D181608E2C1AF3C2004BA146 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D18160912C1AF3DD004BA146 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D18160A42C1AF4B8004BA146 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D181609C2C1AF466004BA146 /* Kingfisher in Frameworks */,
+				D181609F2C1AF46F004BA146 /* Alamofire in Frameworks */,
+				D18160992C1AF45E004BA146 /* Toast in Frameworks */,
+				D18160962C1AF458004BA146 /* IQKeyboardManagerSwift in Frameworks */,
+				D18160A22C1AF482004BA146 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +71,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D18160A32C1AF4A8004BA146 /* Custom */,
 				D18160932C1AF3F5004BA146 /* ViewController */,
 				D18160902C1AF3D5004BA146 /* API */,
 				D18160782C1AF14F004BA146 /* AppDelegate.swift */,
@@ -86,6 +99,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D18160A32C1AF4A8004BA146 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D18160A42C1AF4B8004BA146 /* TabBarController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +123,13 @@
 			dependencies = (
 			);
 			name = Shopping;
+			packageProductDependencies = (
+				D18160952C1AF458004BA146 /* IQKeyboardManagerSwift */,
+				D18160982C1AF45E004BA146 /* Toast */,
+				D181609B2C1AF466004BA146 /* Kingfisher */,
+				D181609E2C1AF46F004BA146 /* Alamofire */,
+				D18160A12C1AF482004BA146 /* SnapKit */,
+			);
 			productName = Shopping;
 			productReference = D18160752C1AF14F004BA146 /* Shopping.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +158,13 @@
 				Base,
 			);
 			mainGroup = D181606C2C1AF14F004BA146;
+			packageReferences = (
+				D18160942C1AF458004BA146 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				D18160972C1AF45E004BA146 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				D181609A2C1AF466004BA146 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D181609D2C1AF46F004BA146 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D18160A02C1AF482004BA146 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D18160762C1AF14F004BA146 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,6 +195,7 @@
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
+				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +342,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopping/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeaningOut;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -337,6 +374,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopping/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeaningOut;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -381,6 +419,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D18160942C1AF458004BA146 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
+		D18160972C1AF45E004BA146 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		D181609A2C1AF466004BA146 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		D181609D2C1AF46F004BA146 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		D18160A02C1AF482004BA146 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D18160952C1AF458004BA146 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D18160942C1AF458004BA146 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		D18160982C1AF45E004BA146 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D18160972C1AF45E004BA146 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		D181609B2C1AF466004BA146 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D181609A2C1AF466004BA146 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D181609E2C1AF46F004BA146 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D181609D2C1AF46F004BA146 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D18160A12C1AF482004BA146 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D18160A02C1AF482004BA146 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D181606D2C1AF14F004BA146 /* Project object */;
 }
