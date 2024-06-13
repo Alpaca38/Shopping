@@ -20,6 +20,11 @@
 		D181609F2C1AF46F004BA146 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D181609E2C1AF46F004BA146 /* Alamofire */; };
 		D18160A22C1AF482004BA146 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D18160A12C1AF482004BA146 /* SnapKit */; };
 		D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160A42C1AF4B8004BA146 /* TabBarController.swift */; };
+		D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160A62C1AF5AF004BA146 /* BaseViewController.swift */; };
+		D18160AA2C1AF69E004BA146 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160A92C1AF69E004BA146 /* Color.swift */; };
+		D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */; };
+		D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160AE2C1AF8BC004BA146 /* Font.swift */; };
+		D18160B12C1AFA10004BA146 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B02C1AFA10004BA146 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		D181608E2C1AF3C2004BA146 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D18160912C1AF3DD004BA146 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		D18160A42C1AF4B8004BA146 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D18160A62C1AF5AF004BA146 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D18160A92C1AF69E004BA146 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		D18160AE2C1AF8BC004BA146 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		D18160B02C1AFA10004BA146 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,8 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D18160AB2C1AF756004BA146 /* Extension */,
+				D18160A82C1AF690004BA146 /* Resource */,
 				D18160A32C1AF4A8004BA146 /* Custom */,
 				D18160932C1AF3F5004BA146 /* ViewController */,
 				D18160902C1AF3D5004BA146 /* API */,
@@ -103,8 +115,27 @@
 			isa = PBXGroup;
 			children = (
 				D18160A42C1AF4B8004BA146 /* TabBarController.swift */,
+				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		D18160A82C1AF690004BA146 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D18160A92C1AF69E004BA146 /* Color.swift */,
+				D18160AE2C1AF8BC004BA146 /* Font.swift */,
+				D18160B02C1AFA10004BA146 /* Image.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D18160AB2C1AF756004BA146 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +225,14 @@
 			files = (
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
+				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
+				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
+				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
+				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
+				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
