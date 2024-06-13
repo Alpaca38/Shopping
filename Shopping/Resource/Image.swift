@@ -14,6 +14,7 @@ enum Image {
     static let xmark = UIImage(systemName: "xmark")
     static let next = UIImage(systemName: "chevron.right")
     static let camera = UIImage(systemName: "camera.fill")
+    static let launch = UIImage(named: "launch")
     static let empty = UIImage(named: "empty")
     static let likeSelected = UIImage(named: "like_selected")
     static let likeUnSelected = UIImage(named: "like_unselected")
@@ -59,5 +60,12 @@ enum Image {
     enum Alpha: CGFloat {
         case active = 1
         case inActive = 0.5
+    }
+    
+    enum Size: CGFloat {
+        case launch
+        case bigProfile
+        case smallProfile
+        
     }
 }

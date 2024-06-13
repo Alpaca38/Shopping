@@ -25,6 +25,9 @@
 		D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */; };
 		D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160AE2C1AF8BC004BA146 /* Font.swift */; };
 		D18160B12C1AFA10004BA146 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B02C1AFA10004BA146 /* Image.swift */; };
+		D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B52C1B0145004BA146 /* SceneManager.swift */; };
+		D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */; };
+		D18160BA2C1B09CC004BA146 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B92C1B09CC004BA146 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		D18160AE2C1AF8BC004BA146 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D18160B02C1AFA10004BA146 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D18160B52C1B0145004BA146 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		D18160B92C1B09CC004BA146 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D18160B42C1B013E004BA146 /* Manager */,
 				D18160AB2C1AF756004BA146 /* Extension */,
 				D18160A82C1AF690004BA146 /* Resource */,
 				D18160A32C1AF4A8004BA146 /* Custom */,
@@ -126,6 +133,7 @@
 				D18160A92C1AF69E004BA146 /* Color.swift */,
 				D18160AE2C1AF8BC004BA146 /* Font.swift */,
 				D18160B02C1AFA10004BA146 /* Image.swift */,
+				D18160B92C1B09CC004BA146 /* Button.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -136,6 +144,15 @@
 				D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D18160B42C1B013E004BA146 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D18160B52C1B0145004BA146 /* SceneManager.swift */,
+				D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,13 +242,16 @@
 			files = (
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
+				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
+				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
 				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
+				D18160BA2C1B09CC004BA146 /* Button.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
