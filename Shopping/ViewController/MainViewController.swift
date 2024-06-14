@@ -61,7 +61,7 @@ class MainViewController: BaseViewController {
         self.view.addSubview(view)
         return view
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = UserDefaultsManager.standard.user.mainNaviTitle
@@ -102,12 +102,13 @@ class MainViewController: BaseViewController {
             }
         }
     }
-
+    
 }
 
 extension MainViewController {
     @objc func clearButtonTapped() {
         UserDefaultsManager.standard.searchList = []
+        tableView.reloadData()
     }
 }
 
@@ -127,12 +128,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
         cell.configure(index: indexPath.row)
+        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        // 검색 화면 이동
     }
-    
-    
+}
+
+extension MainViewController: SearchTableViewCellDelegate {
+    func didXMarkTapped(cell: UITableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell) {
+            UserDefaultsManager.standard.searchList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }

@@ -39,6 +39,7 @@
 		D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */; };
 		D18160D52C1BD0EE004BA146 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D42C1BD0EE004BA146 /* User.swift */; };
 		D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */; };
+		D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		D18160D42C1BD0EE004BA146 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */,
+				D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */,
 				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
 				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
+				D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,

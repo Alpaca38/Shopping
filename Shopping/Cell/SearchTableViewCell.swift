@@ -10,6 +10,8 @@ import SnapKit
 
 class SearchTableViewCell: UITableViewCell {
     
+    weak var delegate: SearchTableViewCellDelegate?
+    
     lazy var clockImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
@@ -31,13 +33,16 @@ class SearchTableViewCell: UITableViewCell {
         view.contentMode = .scaleAspectFit
         view.tintColor = Color.black
         view.image = Image.xmark
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(xmarkTapped))
+        view.addGestureRecognizer(tapGesture)
+        view.isUserInteractionEnabled = true
         self.contentView.addSubview(view)
         return view
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        selectionStyle = .none
         configureLayout()
     }
     
@@ -69,4 +74,10 @@ class SearchTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension SearchTableViewCell {
+    @objc func xmarkTapped() {
+        delegate?.didXMarkTapped(cell: self)
+    }
 }
