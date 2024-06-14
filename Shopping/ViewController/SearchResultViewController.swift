@@ -20,6 +20,8 @@ class SearchResultViewController: BaseViewController {
         }
     }
     
+    private var selectedButton: UIButton?
+    
     lazy var totalLabel = {
         let label = UILabel()
         label.font = Font.boldTitle
@@ -37,23 +39,31 @@ class SearchResultViewController: BaseViewController {
         return view
     }()
     
-    let simButton = {
+    lazy var simButton = {
         let button = FilterButton(title: Sort.sim.sortString)
+        button.tag = 0
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    let dateButton = {
+    lazy var dateButton = {
         let button = FilterButton(title: Sort.date.sortString)
+        button.tag = 1
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    let dscButton = {
+    lazy var dscButton = {
         let button = FilterButton(title: Sort.dsc.sortString)
+        button.tag = 2
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    let ascButton = {
+    lazy var ascButton = {
         let button = FilterButton(title: Sort.asc.sortString)
+        button.tag = 3
+        button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -107,6 +117,19 @@ class SearchResultViewController: BaseViewController {
     }
 }
 
+private extension SearchResultViewController {
+    
+    @objc func filterButtonTapped(_ sender: UIButton) {
+        selectedButton?.backgroundColor = Color.white
+        selectedButton?.setTitleColor(Color.black, for: .normal)
+        sender.backgroundColor = Color.darkGray
+        sender.setTitleColor(Color.white, for: .normal)
+        selectedButton = sender
+        
+        callShoppingRequest(query: searchText!, sort: Sort.allCases[sender.tag].rawValue)
+    }
+}
+
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.items.count
@@ -122,7 +145,7 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     
 }
 
-extension SearchResultViewController {
+private extension SearchResultViewController {
     func callShoppingRequest(query: String, sort: Sort.RawValue) {
         let url = "https://openapi.naver.com/v1/search/shop.json"
         

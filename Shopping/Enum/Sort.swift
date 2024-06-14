@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Sort: String {
+enum Sort: String, CaseIterable {
     case sim // 정확도순으로 내림차순 (기본값)
     case date // 날짜순 내림차순
     case dsc // 가격 높은순
