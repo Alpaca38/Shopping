@@ -98,7 +98,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         
         priceLabel.text = data.priceString
         
-        print(UserDefaultsManager.standard.likeList.count)
         if UserDefaultsManager.standard.likeList.contains(data.productId) {
             likeButton.setImage(Image.likeSelected, for: .normal)
             likeButton.backgroundColor = Color.white

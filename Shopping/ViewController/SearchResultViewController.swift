@@ -21,6 +21,7 @@ class SearchResultViewController: BaseViewController {
     }
     
     private var selectedButton: UIButton?
+    private var selectButtonIndex: Int = 0
     
     lazy var totalLabel = {
         let label = UILabel()
@@ -34,6 +35,7 @@ class SearchResultViewController: BaseViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.dataSource = self
         view.delegate = self
+        view.prefetchDataSource = self
         view.register(SearchResultCollectionViewCell.self, forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
         self.view.addSubview(view)
         return view
@@ -126,6 +128,9 @@ private extension SearchResultViewController {
         sender.setTitleColor(Color.white, for: .normal)
         selectedButton = sender
         
+        page = 1
+        
+        selectButtonIndex = sender.tag
         callShoppingRequest(query: searchText!, sort: Sort.allCases[sender.tag].rawValue)
     }
 }
@@ -146,6 +151,21 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     
 }
 
+extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach {
+            if list.items.count - 4 == $0.item {
+                page += 1
+                callShoppingRequest(query: searchText!, sort: Sort.allCases[selectButtonIndex].rawValue)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
+}
+
 extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
     func didLikeButtonTapped(cell: UICollectionViewCell) {
         if let indexPath = collectionView.indexPath(for: cell) {
@@ -154,7 +174,6 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
                 UserDefaultsManager.standard.likeList.removeAll { $0 == productId }
             } else {
                 UserDefaultsManager.standard.likeList.append(list.items[indexPath.item].productId)
-                print(UserDefaultsManager.standard.likeList.count)
             }
             collectionView.reloadItems(at: [indexPath])
         }
@@ -185,7 +204,12 @@ private extension SearchResultViewController {
         .responseDecodable(of: SearchResult.self) { response in
             switch response.result {
             case .success(let value):
-                self.list = value
+                if self.page == 1 {
+                    self.list = value
+                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                } else {
+                    self.list.items.append(contentsOf: value.items)
+                }
             case .failure(let error):
                 print(error)
             }
