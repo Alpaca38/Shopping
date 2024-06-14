@@ -16,3 +16,9 @@ extension UICollectionViewCell: ReuseIdentifier {
         return String(describing: self)
     }
 }
+
+extension UITableViewCell: ReuseIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

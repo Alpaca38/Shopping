@@ -38,6 +38,7 @@
 		D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */; };
 		D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */; };
 		D18160D52C1BD0EE004BA146 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D42C1BD0EE004BA146 /* User.swift */; };
+		D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		D18160D42C1BD0EE004BA146 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */,
+				D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				D18160BA2C1B09CC004BA146 /* Button.swift in Sources */,
 				D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
+				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 				D18160D52C1BD0EE004BA146 /* User.swift in Sources */,
 			);

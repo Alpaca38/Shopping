@@ -12,6 +12,6 @@ struct User: Codable {
     var image: Image.Profile.RawValue // Int
     
     var mainNaviTitle: String {
-        return "\(nickname)'s Meaning Out"
+        return "\(nickname)'s MEANING OUT"
     }
 }
