@@ -19,7 +19,7 @@ enum Image {
     static let likeSelected = UIImage(named: "like_selected")
     static let likeUnSelected = UIImage(named: "like_unselected")
     
-    enum Profile: CaseIterable {
+    enum Profile: Int, CaseIterable {
         case one, two, three, four, five, six, seven, eight, nine, ten, eleven, tweleve
         
         var profileImage: UIImage? {

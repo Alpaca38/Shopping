@@ -9,4 +9,9 @@ import Foundation
 
 enum LiteralString {
     static let specialCharacter = "@#$%"
+    
+    static let profileSetting = "PROFILE SETTING"
+    static let setting = "SETTING"
+    static let editProfile = "EDIT PROFILE"
+    static let save = "저장"
 }

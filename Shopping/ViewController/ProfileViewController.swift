@@ -13,6 +13,9 @@ class ProfileViewController: BaseViewController {
     
     lazy var profileImageView = {
         let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
+        view.addGestureRecognizer(tapGesture)
+        view.isUserInteractionEnabled = true
         self.view.addSubview(view)
         return view
     }()
@@ -52,15 +55,19 @@ class ProfileViewController: BaseViewController {
         return button
     }()
     
-    var isValid: Bool = false
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "PROFILE SETTING"
         
         configureLayout()
         setRandomImage()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -100,16 +107,19 @@ class ProfileViewController: BaseViewController {
         let random = Int.random(in: 0..<Image.Profile.allCases.count)
         profileImageView.image = Image.Profile.allCases[random].profileImage
     }
-
 }
 
 extension ProfileViewController {
     @objc func completeButtonTapped() {
-        if isValid {
+        if UserDefaultsManager.standard.isLogin {
             SceneManager.shared.setScene(viewController: MainViewController())
         } else {
             self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
         }
+    }
+    
+    @objc func profileImageTapped() {
+        navigationController?.pushViewController(ProfileImageViewController(), animated: true)
     }
 }
 
@@ -125,7 +135,8 @@ extension ProfileViewController: UITextFieldDelegate {
             stateLabel.text = "2글자 이상 10글자 미만으로 설정해주세요."
         } else {
             stateLabel.text = "사용할 수 있는 닉네임이에요."
-            isValid = true
+            UserDefaultsManager.standard.user.nickname = text
+            UserDefaultsManager.standard.isLogin = true
         }
     }
 }
