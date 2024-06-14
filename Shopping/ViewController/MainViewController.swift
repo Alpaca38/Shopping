@@ -115,8 +115,10 @@ extension MainViewController {
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         UserDefaultsManager.standard.searchList.insert(searchBar.text!, at: 0)
+        let vc = SearchResultViewController()
+        vc.searchText = searchBar.text!
         searchBar.text = nil
-        // 검색 결과 화면으로 이동
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -133,7 +135,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 검색 화면 이동
+        let vc = SearchResultViewController()
+        vc.searchText = UserDefaultsManager.standard.searchList[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
