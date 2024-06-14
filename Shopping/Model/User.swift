@@ -10,8 +10,19 @@ import Foundation
 struct User: Codable {
     var nickname: String = "옹골찬 고래밥"
     var image: Image.Profile.RawValue // Int
+    var registerDate: Date = Date()
     
     var mainNaviTitle: String {
         return "\(nickname)'s MEANING OUT"
+    }
+    
+    var registerDateString: String {
+        let formattedDate = registerDate.formatted(
+            .dateTime.year()
+            .month(.twoDigits)
+            .day(.twoDigits)
+            .locale(Locale(identifier: "ko_KR"))
+        )
+        return "\(formattedDate) 가입"
     }
 }

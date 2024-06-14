@@ -17,7 +17,10 @@ class TabBarController: UITabBarController {
         let main = UINavigationController(rootViewController: MainViewController())
         main.tabBarItem = UITabBarItem(title: LiteralString.search, image: Image.search, tag: 0)
         
-        setViewControllers([main], animated: true)
+        let setting = UINavigationController(rootViewController: SettingViewController())
+        setting.tabBarItem = UITabBarItem(title: LiteralString.settingItem, image: Image.setting, tag: 1)
+        
+        setViewControllers([main, setting], animated: true)
         
     }
     

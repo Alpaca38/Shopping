@@ -48,6 +48,9 @@
 		D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E92C1C3CA0004BA146 /* Extension+String.swift */; };
 		D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */; };
 		D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160ED2C1C5845004BA146 /* DetailViewController.swift */; };
+		D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160EF2C1C62F0004BA146 /* SettingViewController.swift */; };
+		D18160F22C1C71FC004BA146 /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F12C1C71FC004BA146 /* SettingOptions.swift */; };
+		D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F32C1C7395004BA146 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +92,9 @@
 		D18160E92C1C3CA0004BA146 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 		D18160ED2C1C5845004BA146 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D18160EF2C1C62F0004BA146 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		D18160F12C1C71FC004BA146 /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
+		D18160F32C1C7395004BA146 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,7 @@
 				D18160CB2C1BC9A5004BA146 /* ProfileImageViewController.swift */,
 				D18160DC2C1C0DC8004BA146 /* SearchResultViewController.swift */,
 				D18160ED2C1C5845004BA146 /* DetailViewController.swift */,
+				D18160EF2C1C62F0004BA146 /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 				D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */,
 				D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */,
 				D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */,
+				D18160F32C1C7395004BA146 /* SettingTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				D18160B92C1B09CC004BA146 /* Button.swift */,
 				D18160C32C1B22E8004BA146 /* LiteralString.swift */,
 				D18160E32C1C19BE004BA146 /* Sort.swift */,
+				D18160F12C1C71FC004BA146 /* SettingOptions.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
+				D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */,
 				D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
@@ -361,10 +371,12 @@
 				D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
+				D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 				D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */,
 				D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */,
 				D18160D52C1BD0EE004BA146 /* User.swift in Sources */,
+				D18160F22C1C71FC004BA146 /* SettingOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

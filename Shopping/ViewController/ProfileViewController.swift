@@ -112,7 +112,7 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController {
     @objc func completeButtonTapped() {
         if UserDefaultsManager.standard.isLogin {
-            SceneManager.shared.setScene(viewController: MainViewController())
+            SceneManager.shared.setScene(viewController: TabBarController())
         } else {
             self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
         }
