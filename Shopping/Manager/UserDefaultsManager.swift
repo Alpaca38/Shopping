@@ -15,7 +15,7 @@ class UserDefaultsManager {
     let userDefaults = UserDefaults.standard
     
     enum Key: String {
-        case isLogin, user, searchList
+        case isLogin, user, searchList, likeList
     }
     
     var isLogin: Bool {
@@ -58,4 +58,13 @@ class UserDefaultsManager {
         }
     }
     
+    var likeList: [String] {
+        get {
+            return userDefaults.stringArray(forKey: Key.likeList.rawValue) ?? []
+        }
+        
+        set {
+            userDefaults.set(newValue, forKey: Key.likeList.rawValue)
+        }
+    }
 }

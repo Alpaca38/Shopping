@@ -10,6 +10,9 @@ import SnapKit
 import Kingfisher
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
+    
+    var delegate: SearchResultCollectionViewCellDelegate?
+    
     lazy var imageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -42,6 +45,15 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    lazy var likeButton = {
+        let button = UIButton()
+        button.contentMode = .scaleAspectFit
+        button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        self.contentView.addSubview(button)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
@@ -69,6 +81,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
             $0.leading.equalTo(titleLabel)
         }
         
+        likeButton.snp.makeConstraints {
+            $0.trailing.bottom.equalTo(imageView).inset(16)
+            $0.size.equalTo(30)
+        }
+        
     }
     
     func configure(data: Item) {
@@ -80,9 +97,25 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         titleLabel.attributedText = data.title.asAttributedString()
         
         priceLabel.text = data.priceString
+        
+        print(UserDefaultsManager.standard.likeList.count)
+        if UserDefaultsManager.standard.likeList.contains(data.productId) {
+            likeButton.setImage(Image.likeSelected, for: .normal)
+            likeButton.backgroundColor = Color.white
+        } else {
+            likeButton.setImage(Image.likeUnSelected, for: .normal)
+            likeButton.backgroundColor = Color.black.withAlphaComponent(0.15)
+        }
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension SearchResultCollectionViewCell {
+    @objc func likeButtonTapped(_ sender: UIButton) {
+        delegate?.didLikeButtonTapped(cell: self)
     }
 }

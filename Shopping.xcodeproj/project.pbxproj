@@ -46,6 +46,7 @@
 		D18160E62C1C204B004BA146 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E52C1C204B004BA146 /* FilterButton.swift */; };
 		D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */; };
 		D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E92C1C3CA0004BA146 /* Extension+String.swift */; };
+		D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		D18160E52C1C204B004BA146 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		D18160E92C1C3CA0004BA146 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			children = (
 				D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */,
 				D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */,
+				D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 				D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */,
+				D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */,
 				D18160D52C1BD0EE004BA146 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

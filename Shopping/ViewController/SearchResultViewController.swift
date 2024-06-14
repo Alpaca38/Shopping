@@ -106,7 +106,7 @@ class SearchResultViewController: BaseViewController {
     func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let sectionSpacing: CGFloat = 20
-        let cellSpacing: CGFloat = 16
+        let cellSpacing: CGFloat = 20
         let width = UIScreen.main.bounds.width - sectionSpacing * 2 - cellSpacing
         layout.itemSize = CGSize(width: width/2, height: width/2 * 2)
         layout.scrollDirection = .vertical
@@ -138,11 +138,27 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
         let data = list.items[indexPath.item]
+        cell.delegate = self
         cell.configure(data: data)
         return cell
     }
     
     
+}
+
+extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
+    func didLikeButtonTapped(cell: UICollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell) {
+            let productId = list.items[indexPath.item].productId
+            if UserDefaultsManager.standard.likeList.contains(productId) {
+                UserDefaultsManager.standard.likeList.removeAll { $0 == productId }
+            } else {
+                UserDefaultsManager.standard.likeList.append(list.items[indexPath.item].productId)
+                print(UserDefaultsManager.standard.likeList.count)
+            }
+            collectionView.reloadItems(at: [indexPath])
+        }
+    }
 }
 
 private extension SearchResultViewController {
