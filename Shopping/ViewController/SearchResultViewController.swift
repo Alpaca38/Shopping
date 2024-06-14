@@ -87,6 +87,10 @@ class SearchResultViewController: BaseViewController {
         configureLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     func configureLayout() {
         totalLabel.snp.makeConstraints {
             $0.top.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
@@ -148,7 +152,13 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = list.items[indexPath.item]
+        let vc = DetailViewController()
+        vc.titleText = searchText
+        vc.data = data
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension SearchResultViewController: UICollectionViewDataSourcePrefetching {

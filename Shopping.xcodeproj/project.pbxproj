@@ -47,6 +47,7 @@
 		D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */; };
 		D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E92C1C3CA0004BA146 /* Extension+String.swift */; };
 		D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */; };
+		D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160ED2C1C5845004BA146 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		D18160E92C1C3CA0004BA146 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		D18160ED2C1C5845004BA146 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				D18160C92C1BC81E004BA146 /* MainViewController.swift */,
 				D18160CB2C1BC9A5004BA146 /* ProfileImageViewController.swift */,
 				D18160DC2C1C0DC8004BA146 /* SearchResultViewController.swift */,
+				D18160ED2C1C5845004BA146 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */,
 				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
