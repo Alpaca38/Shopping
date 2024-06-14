@@ -33,6 +33,7 @@
 		D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */; };
 		D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C32C1B22E8004BA146 /* LiteralString.swift */; };
 		D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C72C1B27BB004BA146 /* CustomButton.swift */; };
+		D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C92C1BC81E004BA146 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextField.swift; sourceTree = "<group>"; };
 		D18160C32C1B22E8004BA146 /* LiteralString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteralString.swift; sourceTree = "<group>"; };
 		D18160C72C1B27BB004BA146 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D18160C92C1BC81E004BA146 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */,
 				D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */,
+				D18160C92C1BC81E004BA146 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
+				D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */,
 				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
 				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,

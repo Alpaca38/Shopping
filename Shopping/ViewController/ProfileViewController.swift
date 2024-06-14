@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class ProfileViewController: BaseViewController {
     
@@ -105,9 +106,9 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController {
     @objc func completeButtonTapped() {
         if isValid {
-            // 메인화면 이동
+            SceneManager.shared.setScene(viewController: MainViewController())
         } else {
-            // 경고 토스트
+            self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
         }
     }
 }
