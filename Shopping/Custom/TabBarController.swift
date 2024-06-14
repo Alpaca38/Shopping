@@ -11,7 +11,13 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBar.tintColor = Color.main
+        tabBar.unselectedItemTintColor = Color.gray
         
+        let main = UINavigationController(rootViewController: MainViewController())
+        main.tabBarItem = UITabBarItem(title: LiteralString.search, image: Image.search, tag: 0)
+        
+        setViewControllers([main], animated: true)
         
     }
     

@@ -19,7 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let data = UserDefaultsManager.standard.isLogin
         
         if data {
-            
+            let vc = TabBarController()
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
         } else {
             let navi = UINavigationController(rootViewController: OnBoardingViewController())
             window?.rootViewController = navi

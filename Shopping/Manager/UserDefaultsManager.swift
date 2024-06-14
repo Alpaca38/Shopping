@@ -15,16 +15,16 @@ class UserDefaultsManager {
     let userDefaults = UserDefaults.standard
     
     enum Key: String {
-        case isLogin, user
+        case isLogin, user, searchList
     }
     
     var isLogin: Bool {
         get {
-            return userDefaults.bool(forKey: "isLogin")
+            return userDefaults.bool(forKey: Key.isLogin.rawValue)
         }
         
         set {
-            userDefaults.set(newValue, forKey: "isLogin")
+            userDefaults.set(newValue, forKey: Key.isLogin.rawValue)
         }
     }
     
@@ -45,6 +45,16 @@ class UserDefaultsManager {
             if let encoded = try? encoder.encode(newValue) {
                 UserDefaults.standard.setValue(encoded, forKey: Key.user.rawValue)
             }
+        }
+    }
+    
+    var searchList : [String] {
+        get {
+            return userDefaults.stringArray(forKey: Key.searchList.rawValue) ?? []
+        }
+        
+        set {
+            userDefaults.set(newValue, forKey: Key.searchList.rawValue)
         }
     }
     
