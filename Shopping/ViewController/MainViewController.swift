@@ -114,7 +114,7 @@ extension MainViewController {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        UserDefaultsManager.standard.searchList.append(searchBar.text!)
+        UserDefaultsManager.standard.searchList.insert(searchBar.text!, at: 0)
         searchBar.text = nil
         // 검색 결과 화면으로 이동
     }
