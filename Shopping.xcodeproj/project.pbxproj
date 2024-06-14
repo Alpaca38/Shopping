@@ -41,6 +41,11 @@
 		D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */; };
 		D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */; };
 		D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160DC2C1C0DC8004BA146 /* SearchResultViewController.swift */; };
+		D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E02C1C15AD004BA146 /* SearchResult.swift */; };
+		D18160E42C1C19BE004BA146 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E32C1C19BE004BA146 /* Sort.swift */; };
+		D18160E62C1C204B004BA146 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E52C1C204B004BA146 /* FilterButton.swift */; };
+		D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */; };
+		D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160E92C1C3CA0004BA146 /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +80,11 @@
 		D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		D18160DC2C1C0DC8004BA146 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		D18160E02C1C15AD004BA146 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D18160E32C1C19BE004BA146 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		D18160E52C1C204B004BA146 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		D18160E92C1C3CA0004BA146 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D18160E22C1C19B0004BA146 /* Enum */,
 				D18160D32C1BD0B3004BA146 /* Model */,
 				D18160D02C1BCD01004BA146 /* Protocol */,
 				D18160CD2C1BCC6A004BA146 /* Cell */,
@@ -159,6 +170,7 @@
 				D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */,
 				D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */,
 				D18160C72C1B27BB004BA146 /* CustomButton.swift */,
+				D18160E52C1C204B004BA146 /* FilterButton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -169,8 +181,6 @@
 				D18160A92C1AF69E004BA146 /* Color.swift */,
 				D18160AE2C1AF8BC004BA146 /* Font.swift */,
 				D18160B02C1AFA10004BA146 /* Image.swift */,
-				D18160B92C1B09CC004BA146 /* Button.swift */,
-				D18160C32C1B22E8004BA146 /* LiteralString.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -179,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */,
+				D18160E92C1C3CA0004BA146 /* Extension+String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 			children = (
 				D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */,
 				D18160D82C1C0034004BA146 /* SearchTableViewCell.swift */,
+				D18160E72C1C267F004BA146 /* SearchResultCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -214,8 +226,19 @@
 			isa = PBXGroup;
 			children = (
 				D18160D42C1BD0EE004BA146 /* User.swift */,
+				D18160E02C1C15AD004BA146 /* SearchResult.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D18160E22C1C19B0004BA146 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D18160B92C1B09CC004BA146 /* Button.swift */,
+				D18160C32C1B22E8004BA146 /* LiteralString.swift */,
+				D18160E32C1C19BE004BA146 /* Sort.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,9 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
+				D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
 				D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */,
@@ -321,9 +346,12 @@
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
+				D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */,
 				D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */,
 				D18160BA2C1B09CC004BA146 /* Button.swift in Sources */,
+				D18160E62C1C204B004BA146 /* FilterButton.swift in Sources */,
 				D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */,
+				D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
