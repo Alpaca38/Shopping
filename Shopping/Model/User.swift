@@ -8,7 +8,7 @@
 import Foundation
 
 struct User: Codable {
-    var nickname: String = "옹골찬 고래밥"
+    var nickname: String = LiteralString.defaultNickname
     var image: Image.Profile.RawValue // Int
     var registerDate: Date = Date()
     

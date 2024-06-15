@@ -39,7 +39,7 @@ class ProfileViewController: BaseViewController {
         return view
     }()
     
-    lazy var stateLabel = {
+    lazy var textFieldStateLabel = {
         let label = UILabel()
         label.font = Font.item
         label.textColor = Color.main
@@ -58,16 +58,22 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "PROFILE SETTING"
+        if UserDefaultsManager.standard.user.nickname == LiteralString.defaultNickname {
+            title = LiteralString.profileSetting
+            setRandomImage()
+        } else {
+            navigationItem.title = LiteralString.editProfile
+            let saveButton = UIBarButtonItem(title: LiteralString.save, style: .plain, target: self, action: #selector(saveButtonTapped))
+            navigationItem.rightBarButtonItem = saveButton
+        }
         
         configureLayout()
-        setRandomImage()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         profileImageView.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
+        nicknameTextField.text = UserDefaultsManager.standard.user.nickname
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,14 +98,16 @@ class ProfileViewController: BaseViewController {
             $0.height.equalTo(50)
         }
         
-        stateLabel.snp.makeConstraints {
+        textFieldStateLabel.snp.makeConstraints {
             $0.top.equalTo(nicknameTextField.snp.bottom).offset(8)
             $0.leading.equalToSuperview().offset(28)
         }
         
-        completeButton.snp.makeConstraints {
-            $0.top.equalTo(stateLabel.snp.bottom).offset(20)
-            $0.horizontalEdges.equalToSuperview().inset(20)
+        if UserDefaultsManager.standard.isLogin == false {
+            completeButton.snp.makeConstraints {
+                $0.top.equalTo(textFieldStateLabel.snp.bottom).offset(20)
+                $0.horizontalEdges.equalToSuperview().inset(20)
+            }
         }
     }
     
@@ -121,6 +129,10 @@ extension ProfileViewController {
     @objc func profileImageTapped() {
         navigationController?.pushViewController(ProfileImageViewController(), animated: true)
     }
+    
+    @objc func saveButtonTapped() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension ProfileViewController: UITextFieldDelegate {
@@ -128,13 +140,13 @@ extension ProfileViewController: UITextFieldDelegate {
         guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
         
         if text.contains(where: { LiteralString.specialCharacter.contains($0) }) {
-            stateLabel.text = "닉네임에 @,#,$,% 는 포함할 수 없어요."
+            textFieldStateLabel.text = TextFieldState.specialCharacter
         } else if text.rangeOfCharacter(from: .decimalDigits) != nil {
-            stateLabel.text = "닉네임에 숫자는 포함할 수 없어요."
+            textFieldStateLabel.text = TextFieldState.number
         } else if text.count < 2 || text.count >= 10 {
-            stateLabel.text = "2글자 이상 10글자 미만으로 설정해주세요."
+            textFieldStateLabel.text = TextFieldState.count
         } else {
-            stateLabel.text = "사용할 수 있는 닉네임이에요."
+            textFieldStateLabel.text = TextFieldState.valid
             UserDefaultsManager.standard.user.nickname = text
             UserDefaultsManager.standard.isLogin = true
         }

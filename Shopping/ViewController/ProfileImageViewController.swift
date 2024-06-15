@@ -29,7 +29,11 @@ class ProfileImageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = LiteralString.profileSetting
+        if UserDefaultsManager.standard.isLogin {
+            title = LiteralString.editProfile
+        } else {
+            title = LiteralString.profileSetting
+        }
         
         configureLayout()
         

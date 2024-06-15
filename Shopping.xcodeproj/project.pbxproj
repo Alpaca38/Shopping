@@ -51,6 +51,8 @@
 		D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160EF2C1C62F0004BA146 /* SettingViewController.swift */; };
 		D18160F22C1C71FC004BA146 /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F12C1C71FC004BA146 /* SettingOptions.swift */; };
 		D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F32C1C7395004BA146 /* SettingTableViewCell.swift */; };
+		D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F72C1D41F3004BA146 /* TextFieldState.swift */; };
+		D18160FA2C1D456E004BA146 /* ProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160F92C1D456E004BA146 /* ProfileViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		D18160EF2C1C62F0004BA146 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		D18160F12C1C71FC004BA146 /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		D18160F32C1C7395004BA146 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		D18160F72C1D41F3004BA146 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
+		D18160F92C1D456E004BA146 /* ProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +236,7 @@
 				D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */,
 				D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */,
 				D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */,
+				D18160F92C1D456E004BA146 /* ProfileViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				D18160C32C1B22E8004BA146 /* LiteralString.swift */,
 				D18160E32C1C19BE004BA146 /* Sort.swift */,
 				D18160F12C1C71FC004BA146 /* SettingOptions.swift */,
+				D18160F72C1D41F3004BA146 /* TextFieldState.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */,
+				D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */,
 				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
@@ -373,6 +380,7 @@
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
+				D18160FA2C1D456E004BA146 /* ProfileViewDelegate.swift in Sources */,
 				D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */,
 				D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */,
 				D18160D52C1BD0EE004BA146 /* User.swift in Sources */,

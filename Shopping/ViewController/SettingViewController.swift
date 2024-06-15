@@ -73,6 +73,7 @@ class SettingViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nicknameLabel.text = UserDefaultsManager.standard.user.nickname
+        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
         tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
@@ -111,7 +112,8 @@ class SettingViewController: BaseViewController {
 
 private extension SettingViewController {
     @objc func topViewButtonTapped() {
-        // 닉네임 수정화면으로 전환
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func showSelectAlert() {
