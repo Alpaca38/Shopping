@@ -65,7 +65,12 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = UserDefaultsManager.standard.user.mainNaviTitle
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureLayout()
+        tableView.reloadData()
     }
     
     func configureLayout() {
@@ -114,7 +119,9 @@ extension MainViewController {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        UserDefaultsManager.standard.searchList.insert(searchBar.text!, at: 0)
+        if UserDefaultsManager.standard.searchList.contains(searchBar.text!) == false {
+            UserDefaultsManager.standard.searchList.insert(searchBar.text!, at: 0)
+        }
         let vc = SearchResultViewController()
         vc.searchText = searchBar.text!
         searchBar.text = nil
