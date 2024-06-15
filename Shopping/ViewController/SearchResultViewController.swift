@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SnapKit
 import SkeletonView
+import Toast
 
 class SearchResultViewController: BaseViewController {
     
@@ -240,7 +241,7 @@ private extension SearchResultViewController {
                     self.list.items.append(contentsOf: value.items)
                 }
             case .failure(let error):
-                print(error)
+                self.view.makeToast("네트워크 통신에 실패하였습니다.", duration: 2.0, position: .center)
             }
         }
     }
