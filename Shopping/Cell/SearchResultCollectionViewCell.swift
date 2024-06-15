@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import SkeletonView
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
@@ -15,6 +16,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     lazy var imageView = {
         let view = UIImageView()
+        view.isSkeletonable = true
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
@@ -24,6 +26,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     lazy var mallLabel = {
         let view = UILabel()
+        view.isSkeletonable = true
         view.font = Font.small
         view.textColor = Color.lightGray
         self.contentView.addSubview(view)
@@ -32,6 +35,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     lazy var titleLabel = {
         let label = UILabel()
+        label.isSkeletonable = true
         label.font = Font.item
         label.numberOfLines = 2
         self.contentView.addSubview(label)
@@ -40,6 +44,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     lazy var priceLabel = {
         let label = UILabel()
+        label.isSkeletonable = true
         label.font = Font.boldTitle
         self.contentView.addSubview(label)
         return label
@@ -47,6 +52,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     lazy var likeButton = {
         let button = UIButton()
+        button.isSkeletonable = true
         button.contentMode = .scaleAspectFit
         button.layer.cornerRadius = 8
         button.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
@@ -57,6 +63,8 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureLayout()
+        self.isSkeletonable = true
+        
     }
     
     func configureLayout() {

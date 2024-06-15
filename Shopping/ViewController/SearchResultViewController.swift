@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SnapKit
+import SkeletonView
 
 class SearchResultViewController: BaseViewController {
     
@@ -36,6 +37,7 @@ class SearchResultViewController: BaseViewController {
         view.dataSource = self
         view.delegate = self
         view.prefetchDataSource = self
+        view.isSkeletonable = true
         view.register(SearchResultCollectionViewCell.self, forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
         self.view.addSubview(view)
         return view
@@ -82,6 +84,7 @@ class SearchResultViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.title = searchText
         
+        collectionView.showSkeleton()
         callShoppingRequest(query: searchText!, sort: Sort.sim.rawValue)
         
         configureLayout()
@@ -135,6 +138,8 @@ private extension SearchResultViewController {
         page = 1
         
         selectButtonIndex = sender.tag
+        
+        collectionView.showSkeleton()
         callShoppingRequest(query: searchText!, sort: Sort.allCases[sender.tag].rawValue)
     }
 }
@@ -174,6 +179,17 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
         
     }
+}
+
+extension SearchResultViewController: SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return SearchResultCollectionViewCell.identifier
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return list.items.count
+    }
+    
 }
 
 extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
@@ -217,6 +233,9 @@ private extension SearchResultViewController {
                 if self.page == 1 {
                     self.list = value
                     self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    DispatchQueue.main.async { [weak self] in
+                        self?.collectionView.hideSkeleton()
+                    }
                 } else {
                     self.list.items.append(contentsOf: value.items)
                 }
