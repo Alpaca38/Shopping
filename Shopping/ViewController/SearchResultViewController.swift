@@ -241,7 +241,7 @@ private extension SearchResultViewController {
                     self.list.items.append(contentsOf: value.items)
                 }
             case .failure(let error):
-                self.view.makeToast("네트워크 통신에 실패하였습니다.", duration: 2.0, position: .center)
+                self.view.makeToast("\(error.localizedDescription)", duration: 2.0, position: .center)
             }
         }
     }
