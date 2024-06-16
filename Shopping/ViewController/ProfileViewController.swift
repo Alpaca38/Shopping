@@ -11,6 +11,8 @@ import Toast
 
 class ProfileViewController: BaseViewController {
     
+    var nickname: String?
+    
     lazy var profileImageView = {
         let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
@@ -58,7 +60,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaultsManager.standard.user.nickname == LiteralString.defaultNickname {
+        if UserDefaultsManager.standard.user.nickname == "" {
             title = LiteralString.profileSetting
             setRandomImage()
         } else {
@@ -119,7 +121,9 @@ class ProfileViewController: BaseViewController {
 
 extension ProfileViewController {
     @objc func completeButtonTapped() {
-        if UserDefaultsManager.standard.isLogin {
+        if textFieldStateLabel.text == TextFieldState.valid {
+            UserDefaultsManager.standard.user.nickname = nickname!
+            UserDefaultsManager.standard.isLogin = true
             SceneManager.shared.setScene(viewController: TabBarController())
         } else {
             self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
@@ -131,6 +135,7 @@ extension ProfileViewController {
     }
     
     @objc func saveButtonTapped() {
+        UserDefaultsManager.standard.user.nickname = nicknameTextField.text!
         navigationController?.popViewController(animated: true)
     }
 }
@@ -147,8 +152,9 @@ extension ProfileViewController: UITextFieldDelegate {
             textFieldStateLabel.text = TextFieldState.count
         } else {
             textFieldStateLabel.text = TextFieldState.valid
-            UserDefaultsManager.standard.user.nickname = text
-            UserDefaultsManager.standard.isLogin = true
+            nickname = text
+//            UserDefaultsManager.standard.user.nickname = text
+//            UserDefaultsManager.standard.isLogin = true
         }
     }
 }
