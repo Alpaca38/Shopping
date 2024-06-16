@@ -136,8 +136,12 @@ extension ProfileViewController {
     }
     
     @objc func saveButtonTapped() {
-        UserDefaultsManager.user.nickname = nicknameTextField.text!
-        navigationController?.popViewController(animated: true)
+        if textFieldStateLabel.text == TextFieldState.valid {
+            UserDefaultsManager.user.nickname = nicknameTextField.text!
+            navigationController?.popViewController(animated: true)
+        } else {
+            self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
+        }
     }
 }
 
@@ -154,8 +158,6 @@ extension ProfileViewController: UITextFieldDelegate {
         } else {
             textFieldStateLabel.text = TextFieldState.valid
             nickname = text
-//            UserDefaultsManager.standard.user.nickname = text
-//            UserDefaultsManager.standard.isLogin = true
         }
     }
 }
