@@ -60,7 +60,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaultsManager.standard.user.nickname == "" {
+        if UserDefaultsManager.user.nickname == "" {
             title = LiteralString.profileSetting
             setRandomImage()
         } else {
@@ -74,8 +74,8 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
-        nicknameTextField.text = UserDefaultsManager.standard.user.nickname
+        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+        nicknameTextField.text = UserDefaultsManager.user.nickname
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -105,7 +105,7 @@ class ProfileViewController: BaseViewController {
             $0.leading.equalToSuperview().offset(28)
         }
         
-        if UserDefaultsManager.standard.isLogin == false {
+        if UserDefaultsManager.isLogin == false {
             completeButton.snp.makeConstraints {
                 $0.top.equalTo(textFieldStateLabel.snp.bottom).offset(20)
                 $0.horizontalEdges.equalToSuperview().inset(20)
@@ -115,7 +115,7 @@ class ProfileViewController: BaseViewController {
     
     func setRandomImage() {
         let random = Int.random(in: 0..<Image.Profile.allCases.count)
-        UserDefaultsManager.standard.user.image = random
+        UserDefaultsManager.user.image = random
         profileImageView.image = Image.Profile.allCases[random].profileImage
     }
 }
@@ -123,8 +123,8 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController {
     @objc func completeButtonTapped() {
         if textFieldStateLabel.text == TextFieldState.valid {
-            UserDefaultsManager.standard.user.nickname = nickname!
-            UserDefaultsManager.standard.isLogin = true
+            UserDefaultsManager.user.nickname = nickname!
+            UserDefaultsManager.isLogin = true
             SceneManager.shared.setScene(viewController: TabBarController())
         } else {
             self.view.makeToast("사용할 수 없는 닉네임입니다.", duration: 2.0, position: .center)
@@ -136,7 +136,7 @@ extension ProfileViewController {
     }
     
     @objc func saveButtonTapped() {
-        UserDefaultsManager.standard.user.nickname = nicknameTextField.text!
+        UserDefaultsManager.user.nickname = nicknameTextField.text!
         navigationController?.popViewController(animated: true)
     }
 }

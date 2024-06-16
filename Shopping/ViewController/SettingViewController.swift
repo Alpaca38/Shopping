@@ -12,7 +12,7 @@ class SettingViewController: BaseViewController {
     
     lazy var profileImageView = {
         let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.active)
-        view.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
+        view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         self.view.addSubview(view)
         return view
     }()
@@ -27,7 +27,7 @@ class SettingViewController: BaseViewController {
         let label = UILabel()
         label.font = Font.small
         label.textColor = Color.gray
-        label.text = UserDefaultsManager.standard.user.registerDateString
+        label.text = UserDefaultsManager.user.registerDateString
         return label
     }()
     
@@ -72,8 +72,8 @@ class SettingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nicknameLabel.text = UserDefaultsManager.standard.user.nickname
-        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
+        nicknameLabel.text = UserDefaultsManager.user.nickname
+        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
     
@@ -131,10 +131,10 @@ private extension SettingViewController {
     }
     
     func resetUserDefaults() {
-        UserDefaultsManager.standard.user = User(image: Image.Profile.allCases[.random(in: 0..<Image.Profile.allCases.count)].rawValue)
-        UserDefaultsManager.standard.isLogin = false
-        UserDefaultsManager.standard.likeList = []
-        UserDefaultsManager.standard.searchList = []
+        UserDefaultsManager.user = User(image: Image.Profile.allCases[.random(in: 0..<Image.Profile.allCases.count)].rawValue)
+        UserDefaultsManager.isLogin = false
+        UserDefaultsManager.likeList = []
+        UserDefaultsManager.searchList = []
     }
 }
 

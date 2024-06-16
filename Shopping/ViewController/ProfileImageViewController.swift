@@ -12,7 +12,7 @@ class ProfileImageViewController: BaseViewController {
     
     lazy var profileImageView = {
         let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
-        view.image = Image.Profile.allCases[UserDefaultsManager.standard.user.image].profileImage
+        view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         self.view.addSubview(view)
         return view
     }()
@@ -29,7 +29,7 @@ class ProfileImageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if UserDefaultsManager.standard.isLogin {
+        if UserDefaultsManager.isLogin {
             title = LiteralString.editProfile
         } else {
             title = LiteralString.profileSetting
@@ -79,7 +79,7 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UserDefaultsManager.standard.user.image = indexPath.item
+        UserDefaultsManager.user.image = indexPath.item
         profileImageView.image = Image.Profile.allCases[indexPath.item].profileImage
         collectionView.reloadData()
     }

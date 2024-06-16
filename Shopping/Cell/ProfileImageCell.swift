@@ -30,7 +30,7 @@ class ProfileImageCell: UICollectionViewCell {
     func configure(index: Int) {
         profileImageView.image = Image.Profile.allCases[index].profileImage
         
-        if index == UserDefaultsManager.standard.user.image {
+        if index == UserDefaultsManager.user.image {
             profileImageView.layer.borderWidth = Image.Border.active
             profileImageView.layer.borderColor = Color.main.cgColor
             profileImageView.alpha = Image.Alpha.active

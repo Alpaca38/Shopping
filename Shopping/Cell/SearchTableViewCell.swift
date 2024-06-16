@@ -67,7 +67,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func configure(index: Int) {
-        contentLabel.text = UserDefaultsManager.standard.searchList[index]
+        contentLabel.text = UserDefaultsManager.searchList[index]
     }
     
     required init?(coder: NSCoder) {

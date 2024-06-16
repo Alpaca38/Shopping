@@ -38,7 +38,7 @@ class DetailViewController: BaseViewController {
         navigationItem.title = titleText
         
         var image: UIImage?
-        if UserDefaultsManager.standard.likeList.contains(data!.productId) {
+        if UserDefaultsManager.likeList.contains(data!.productId) {
             image = Image.likeSelected
         } else {
             image = Image.likeUnSelected?.withRenderingMode(.alwaysOriginal)
@@ -50,10 +50,10 @@ class DetailViewController: BaseViewController {
 
 private extension DetailViewController {
     @objc func likeButtonTapped() {
-        if UserDefaultsManager.standard.likeList.contains(data!.productId) {
-            UserDefaultsManager.standard.likeList.removeAll { $0 == data!.productId }
+        if UserDefaultsManager.likeList.contains(data!.productId) {
+            UserDefaultsManager.likeList.removeAll { $0 == data!.productId }
         } else {
-            UserDefaultsManager.standard.likeList.append(data!.productId)
+            UserDefaultsManager.likeList.append(data!.productId)
         }
         setNavigationItem()
     }

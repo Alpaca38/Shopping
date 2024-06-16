@@ -64,7 +64,7 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = UserDefaultsManager.standard.user.mainNaviTitle
+        navigationItem.title = UserDefaultsManager.user.mainNaviTitle
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +79,7 @@ class MainViewController: BaseViewController {
             $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
-        if UserDefaultsManager.standard.searchList.isEmpty {
+        if UserDefaultsManager.searchList.isEmpty {
             imageView.snp.makeConstraints {
                 $0.center.equalToSuperview()
                 $0.size.equalTo(view.snp.width).multipliedBy(0.7)
@@ -112,15 +112,15 @@ class MainViewController: BaseViewController {
 
 extension MainViewController {
     @objc func clearButtonTapped() {
-        UserDefaultsManager.standard.searchList = []
+        UserDefaultsManager.searchList = []
         tableView.reloadData()
     }
 }
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if UserDefaultsManager.standard.searchList.contains(searchBar.text!) == false {
-            UserDefaultsManager.standard.searchList.insert(searchBar.text!, at: 0)
+        if UserDefaultsManager.searchList.contains(searchBar.text!) == false {
+            UserDefaultsManager.searchList.insert(searchBar.text!, at: 0)
         }
         let vc = SearchResultViewController()
         vc.searchText = searchBar.text!
@@ -131,7 +131,7 @@ extension MainViewController: UISearchBarDelegate {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        UserDefaultsManager.standard.searchList.count
+        UserDefaultsManager.searchList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,7 +143,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SearchResultViewController()
-        vc.searchText = UserDefaultsManager.standard.searchList[indexPath.row]
+        vc.searchText = UserDefaultsManager.searchList[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -151,7 +151,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: SearchTableViewCellDelegate {
     func didXMarkTapped(cell: UITableViewCell) {
         if let indexPath = tableView.indexPath(for: cell) {
-            UserDefaultsManager.standard.searchList.remove(at: indexPath.row)
+            UserDefaultsManager.searchList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

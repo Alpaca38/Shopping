@@ -197,10 +197,10 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
     func didLikeButtonTapped(cell: UICollectionViewCell) {
         if let indexPath = collectionView.indexPath(for: cell) {
             let productId = list.items[indexPath.item].productId
-            if UserDefaultsManager.standard.likeList.contains(productId) {
-                UserDefaultsManager.standard.likeList.removeAll { $0 == productId }
+            if UserDefaultsManager.likeList.contains(productId) {
+                UserDefaultsManager.likeList.removeAll { $0 == productId }
             } else {
-                UserDefaultsManager.standard.likeList.append(list.items[indexPath.item].productId)
+                UserDefaultsManager.likeList.append(list.items[indexPath.item].productId)
             }
             collectionView.reloadItems(at: [indexPath])
         }

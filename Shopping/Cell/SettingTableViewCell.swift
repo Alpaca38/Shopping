@@ -57,7 +57,7 @@ class SettingTableViewCell: UITableViewCell {
     func configure(index: Int) {
         titleLabel.text = SettingOptions.allCases[index].rawValue
         if index == 0 {
-            subTitleLabel.text = "\(UserDefaultsManager.standard.likeList.count)개의 상품"
+            subTitleLabel.text = "\(UserDefaultsManager.likeList.count)개의 상품"
             likeImage.image = Image.likeSelected
         }
     }
