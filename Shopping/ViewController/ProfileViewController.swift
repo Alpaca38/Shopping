@@ -115,6 +115,7 @@ class ProfileViewController: BaseViewController {
     
     func setRandomImage() {
         let random = Int.random(in: 0..<Image.Profile.allCases.count)
+        UserDefaultsManager.standard.user.image = random
         profileImageView.image = Image.Profile.allCases[random].profileImage
     }
 }
