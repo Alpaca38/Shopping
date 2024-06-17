@@ -64,11 +64,12 @@ class MainViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = UserDefaultsManager.user.mainNaviTitle
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.title = UserDefaultsManager.user.mainNaviTitle
         configureLayout()
         tableView.reloadData()
     }
