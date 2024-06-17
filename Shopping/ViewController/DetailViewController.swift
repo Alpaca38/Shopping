@@ -35,7 +35,7 @@ class DetailViewController: BaseViewController {
     }
     
     func setNavigationItem() {
-        navigationItem.title = titleText
+        navigationItem.title = data?.title.asAttributedString().map { $0.string }
         
         var image: UIImage?
         if UserDefaultsManager.likeList.contains(data!.productId) {
