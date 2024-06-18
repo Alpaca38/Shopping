@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7BB2C216FB300D2E535 /* ValidationError.swift */; };
 		D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160782C1AF14F004BA146 /* AppDelegate.swift */; };
 		D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607A2C1AF14F004BA146 /* SceneDelegate.swift */; };
 		D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11DA7BB2C216FB300D2E535 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		D18160752C1AF14F004BA146 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18160782C1AF14F004BA146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D181607A2C1AF14F004BA146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				D18160F12C1C71FC004BA146 /* SettingOptions.swift */,
 				D18160F72C1D41F3004BA146 /* TextFieldState.swift */,
 				D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */,
+				D11DA7BB2C216FB300D2E535 /* ValidationError.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
 				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D18160CC2C1BC9A5004BA146 /* ProfileImageViewController.swift in Sources */,
+				D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,

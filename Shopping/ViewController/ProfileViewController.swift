@@ -136,7 +136,7 @@ extension ProfileViewController {
     }
     
     @objc func saveButtonTapped() {
-        if textFieldStateLabel.text == TextFieldState.valid {
+        if textFieldStateLabel.text == TextFieldState.valid || nicknameTextField.text == UserDefaultsManager.user.nickname {
             UserDefaultsManager.user.nickname = nicknameTextField.text!
             navigationController?.popViewController(animated: true)
         } else {
@@ -148,16 +148,31 @@ extension ProfileViewController {
 extension ProfileViewController: UITextFieldDelegate {
     @objc func textFieldDidChage(_ textField: UITextField) {
         guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        
-        if text.contains(where: { LiteralString.specialCharacter.contains($0) }) {
-            textFieldStateLabel.text = TextFieldState.specialCharacter
-        } else if text.rangeOfCharacter(from: .decimalDigits) != nil {
-            textFieldStateLabel.text = TextFieldState.number
-        } else if text.count < 2 || text.count >= 10 {
-            textFieldStateLabel.text = TextFieldState.count
-        } else {
+        do {
+            _ = try validateProfileName(text: text)
             textFieldStateLabel.text = TextFieldState.valid
             nickname = text
+        } catch ValidationError.includeSpecial {
+            textFieldStateLabel.text = TextFieldState.specialCharacter
+        } catch ValidationError.includeInt {
+            textFieldStateLabel.text = TextFieldState.number
+        } catch ValidationError.isNotValidCount {
+            textFieldStateLabel.text = TextFieldState.count
+        } catch {
+            
         }
+    }
+    
+    func validateProfileName(text: String) throws -> Bool {
+        guard !text.contains(where: { LiteralString.specialCharacter.contains($0) }) else {
+            throw ValidationError.includeSpecial
+        }
+        guard text.rangeOfCharacter(from: .decimalDigits) == nil else {
+            throw ValidationError.includeInt
+        }
+        guard text.count >= 2 && text.count < 10 else {
+            throw ValidationError.isNotValidCount
+        }
+        return true
     }
 }
