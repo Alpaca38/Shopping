@@ -57,6 +57,9 @@ class SettingViewController: BaseViewController {
     
     lazy var tableView = {
         let view = UITableView()
+        view.isScrollEnabled = false
+        view.separatorInsetReference = .fromCellEdges
+        view.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         view.delegate = self
         view.dataSource = self
         view.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
