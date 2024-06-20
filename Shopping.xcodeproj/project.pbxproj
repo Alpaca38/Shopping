@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7BB2C216FB300D2E535 /* ValidationError.swift */; };
 		D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7CE2C24143600D2E535 /* NetworkManager.swift */; };
+		D11DA7D12C24211900D2E535 /* ShoppingQueryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */; };
 		D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160782C1AF14F004BA146 /* AppDelegate.swift */; };
 		D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607A2C1AF14F004BA146 /* SceneDelegate.swift */; };
 		D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		D11DA7BB2C216FB300D2E535 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		D11DA7CE2C24143600D2E535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingQueryError.swift; sourceTree = "<group>"; };
 		D18160752C1AF14F004BA146 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18160782C1AF14F004BA146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D181607A2C1AF14F004BA146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				D18160F72C1D41F3004BA146 /* TextFieldState.swift */,
 				D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */,
 				D11DA7BB2C216FB300D2E535 /* ValidationError.swift */,
+				D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 				D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */,
 				D18160EC2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift in Sources */,
+				D11DA7D12C24211900D2E535 /* ShoppingQueryError.swift in Sources */,
 				D18160D52C1BD0EE004BA146 /* User.swift in Sources */,
 				D18160F22C1C71FC004BA146 /* SettingOptions.swift in Sources */,
 			);

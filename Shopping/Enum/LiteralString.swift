@@ -17,4 +17,5 @@ enum LiteralString {
     static let editProfile = "EDIT PROFILE"
     static let save = "저장"
     static let search = "검색"
+    static let allSpecialCharacter = #"!@#$%^&*()_+-=[{]}\|;:',<.>"/?"#
 }

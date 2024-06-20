@@ -86,7 +86,16 @@ class SearchResultViewController: BaseViewController {
         navigationItem.title = searchText
         
         collectionView.showSkeleton()
-        getShoppingData(sort: Sort.sim.rawValue)
+        do {
+            let result = try validateQuery(query: searchText!)
+            getShoppingData(sort: Sort.sim.rawValue)
+        } catch ShoppingQueryError.whitespace {
+            self.view.makeToast("공백은 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+        } catch ShoppingQueryError.specialCharacter {
+            self.view.makeToast("특수문자는 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+        } catch {
+            
+        }
         
         configureLayout()
     }
@@ -128,7 +137,6 @@ class SearchResultViewController: BaseViewController {
 }
 
 private extension SearchResultViewController {
-    
     @objc func filterButtonTapped(_ sender: UIButton) {
         selectedButton?.backgroundColor = Color.white
         selectedButton?.setTitleColor(Color.black, for: .normal)
@@ -142,6 +150,17 @@ private extension SearchResultViewController {
         
         collectionView.showSkeleton()
         getShoppingData(sort: Sort.allCases[sender.tag].rawValue)
+    }
+    
+    func validateQuery(query: String) throws -> Bool {
+        let text = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty else {
+            throw ShoppingQueryError.whitespace
+        }
+        guard !query.contains(where: { LiteralString.allSpecialCharacter.contains($0) }) else {
+            throw ShoppingQueryError.specialCharacter
+        }
+        return true
     }
 }
 
@@ -227,43 +246,3 @@ private extension SearchResultViewController {
         }
     }
 }
-
-//private extension SearchResultViewController {
-//    func callShoppingRequest(query: String, sort: Sort.RawValue) {
-//        let url = "https://openapi.naver.com/v1/search/shop.json"
-//        
-//        let parameters: Parameters = [
-//            "query": query,
-//            "start": page,
-//            "display": 30,
-//            "sort": sort
-//        ]
-//        
-//        let header: HTTPHeaders = [
-//            "X-Naver-Client-Id": APIKey.naverId,
-//            "X-Naver-Client-Secret": APIKey.naverSecret
-//        ]
-//        // success와 failure의 기준은 http status code를 기준으로
-//        AF.request(url,
-//                   method: .get,
-//                   parameters: parameters,
-//                   headers: header)
-//        .validate()
-//        .responseDecodable(of: SearchResult.self) { response in
-//            switch response.result {
-//            case .success(let value):
-//                if self.page == 1 {
-//                    self.list = value
-//                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
-//                    DispatchQueue.main.async { [weak self] in
-//                        self?.collectionView.hideSkeleton()
-//                    }
-//                } else {
-//                    self.list.items.append(contentsOf: value.items)
-//                }
-//            case .failure(let error):
-//                self.view.makeToast("\(error.localizedDescription)", duration: 2.0, position: .center)
-//            }
-//        }
-//    }
-//}
