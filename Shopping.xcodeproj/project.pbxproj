@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7BB2C216FB300D2E535 /* ValidationError.swift */; };
+		D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7CE2C24143600D2E535 /* NetworkManager.swift */; };
 		D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160782C1AF14F004BA146 /* AppDelegate.swift */; };
 		D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607A2C1AF14F004BA146 /* SceneDelegate.swift */; };
 		D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		D11DA7BB2C216FB300D2E535 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		D11DA7CE2C24143600D2E535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D18160752C1AF14F004BA146 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18160782C1AF14F004BA146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D181607A2C1AF14F004BA146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			children = (
 				D18160B52C1B0145004BA146 /* SceneManager.swift */,
 				D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */,
+				D11DA7CE2C24143600D2E535 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D18161002C1EA74A004BA146 /* UserDefault.swift in Sources */,
+				D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */,
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
 				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D18160CC2C1BC9A5004BA146 /* ProfileImageViewController.swift in Sources */,

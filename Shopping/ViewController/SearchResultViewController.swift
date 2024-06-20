@@ -86,7 +86,7 @@ class SearchResultViewController: BaseViewController {
         navigationItem.title = searchText
         
         collectionView.showSkeleton()
-        callShoppingRequest(query: searchText!, sort: Sort.sim.rawValue)
+        getShoppingData(sort: Sort.sim.rawValue)
         
         configureLayout()
     }
@@ -141,7 +141,7 @@ private extension SearchResultViewController {
         selectButtonIndex = sender.tag
         
         collectionView.showSkeleton()
-        callShoppingRequest(query: searchText!, sort: Sort.allCases[sender.tag].rawValue)
+        getShoppingData(sort: Sort.allCases[sender.tag].rawValue)
     }
 }
 
@@ -172,7 +172,7 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
         indexPaths.forEach {
             if list.items.count - 4 == $0.item {
                 page += 1
-                callShoppingRequest(query: searchText!, sort: Sort.allCases[selectButtonIndex].rawValue)
+                getShoppingData(sort: Sort.allCases[selectButtonIndex].rawValue)
             }
         }
     }
@@ -208,41 +208,62 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
 }
 
 private extension SearchResultViewController {
-    func callShoppingRequest(query: String, sort: Sort.RawValue) {
-        let url = "https://openapi.naver.com/v1/search/shop.json"
-        
-        let parameters: Parameters = [
-            "query": query,
-            "start": page,
-            "display": 30,
-            "sort": sort
-        ]
-        
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id": APIKey.naverId,
-            "X-Naver-Client-Secret": APIKey.naverSecret
-        ]
-        // success와 failure의 기준은 http status code를 기준으로
-        AF.request(url,
-                   method: .get,
-                   parameters: parameters,
-                   headers: header)
-        .validate()
-        .responseDecodable(of: SearchResult.self) { response in
-            switch response.result {
-            case .success(let value):
+    func getShoppingData(sort: Sort.RawValue) {
+        NetworkManager.shared.getShoppingData(query: searchText!, sort: sort, page: page) { result in
+            switch result {
+            case .success(let success):
                 if self.page == 1 {
-                    self.list = value
+                    self.list = success
                     self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
                     DispatchQueue.main.async { [weak self] in
                         self?.collectionView.hideSkeleton()
                     }
                 } else {
-                    self.list.items.append(contentsOf: value.items)
+                    self.list.items.append(contentsOf: success.items)
                 }
-            case .failure(let error):
-                self.view.makeToast("\(error.localizedDescription)", duration: 2.0, position: .center)
+            case .failure(let failure):
+                self.view.makeToast("\(failure.localizedDescription)", duration: 2.0, position: .center)
             }
         }
     }
 }
+
+//private extension SearchResultViewController {
+//    func callShoppingRequest(query: String, sort: Sort.RawValue) {
+//        let url = "https://openapi.naver.com/v1/search/shop.json"
+//        
+//        let parameters: Parameters = [
+//            "query": query,
+//            "start": page,
+//            "display": 30,
+//            "sort": sort
+//        ]
+//        
+//        let header: HTTPHeaders = [
+//            "X-Naver-Client-Id": APIKey.naverId,
+//            "X-Naver-Client-Secret": APIKey.naverSecret
+//        ]
+//        // success와 failure의 기준은 http status code를 기준으로
+//        AF.request(url,
+//                   method: .get,
+//                   parameters: parameters,
+//                   headers: header)
+//        .validate()
+//        .responseDecodable(of: SearchResult.self) { response in
+//            switch response.result {
+//            case .success(let value):
+//                if self.page == 1 {
+//                    self.list = value
+//                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+//                    DispatchQueue.main.async { [weak self] in
+//                        self?.collectionView.hideSkeleton()
+//                    }
+//                } else {
+//                    self.list.items.append(contentsOf: value.items)
+//                }
+//            case .failure(let error):
+//                self.view.makeToast("\(error.localizedDescription)", duration: 2.0, position: .center)
+//            }
+//        }
+//    }
+//}
