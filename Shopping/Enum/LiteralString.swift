@@ -9,7 +9,6 @@ import Foundation
 
 enum LiteralString {
     static let specialCharacter = "@#$%"
-//    static let defaultNickname = "옹골찬 고래밥"
     
     static let profileSetting = "PROFILE SETTING"
     static let setting = "SETTING"
@@ -17,5 +16,5 @@ enum LiteralString {
     static let editProfile = "EDIT PROFILE"
     static let save = "저장"
     static let search = "검색"
-    static let allSpecialCharacter = #"!@#$%^&*()_+-=[{]}\|;:',<.>"/?"#
+    static let allSpecialCharacter = #"₩~!@#$%^&*()_+-=[{]}\|;:'",<.>/?"#
 }

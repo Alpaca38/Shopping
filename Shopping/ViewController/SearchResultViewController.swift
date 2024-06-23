@@ -87,7 +87,7 @@ class SearchResultViewController: BaseViewController {
         
         collectionView.showSkeleton()
         do {
-            let result = try validateQuery(query: searchText!)
+            let _ = try validateQuery(query: searchText!)
             getShoppingData(sort: Sort.sim.rawValue)
         } catch ShoppingQueryError.whitespace {
             self.view.makeToast("공백은 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
@@ -233,7 +233,9 @@ private extension SearchResultViewController {
             case .success(let success):
                 if self.page == 1 {
                     self.list = success
-                    self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    if !self.list.items.isEmpty {
+                        self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    }
                     DispatchQueue.main.async { [weak self] in
                         self?.collectionView.hideSkeleton()
                     }
