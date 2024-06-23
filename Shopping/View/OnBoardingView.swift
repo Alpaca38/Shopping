@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SnapKit
+import Toast
 
 class OnBoardingView: UIView {
     

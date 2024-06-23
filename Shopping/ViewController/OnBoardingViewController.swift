@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class OnBoardingViewController: BaseViewController {
     let onBoardingView = OnBoardingView()

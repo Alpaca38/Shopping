@@ -60,6 +60,8 @@
 		D18161022C1EA77F004BA146 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */; };
 		D1E586F12C27EE1800F3E452 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */; };
 		D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */; };
+		D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F42C27F0D000F3E452 /* ProfileView.swift */; };
+		D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewDelegate.swift; sourceTree = "<group>"; };
+		D1E586F42C27F0D000F3E452 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 				D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */,
 				D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */,
 				D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */,
+				D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */,
+				D1E586F42C27F0D000F3E452 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
+				D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
 				D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */,
 				D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */,
@@ -422,6 +429,7 @@
 				D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
+				D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */,
 				D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */,
 				D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */,
 				D18160DD2C1C0DC8004BA146 /* SearchResultViewController.swift in Sources */,
