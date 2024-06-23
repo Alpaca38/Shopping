@@ -67,6 +67,8 @@
 		D1E587032C2825CA00F3E452 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587022C2825CA00F3E452 /* ProfileImageView.swift */; };
 		D1E587052C2828DF00F3E452 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587042C2828DF00F3E452 /* SearchResultView.swift */; };
 		D1E587072C282B0500F3E452 /* SearchResultViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */; };
+		D1E587092C282E4300F3E452 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587082C282E4300F3E452 /* SettingView.swift */; };
+		D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,8 @@
 		D1E587022C2825CA00F3E452 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D1E587042C2828DF00F3E452 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewDelegate.swift; sourceTree = "<group>"; };
+		D1E587082C282E4300F3E452 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 				D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */,
 				D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */,
 				D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */,
+				D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				D1E586FE2C280EAA00F3E452 /* MainView.swift */,
 				D1E587022C2825CA00F3E452 /* ProfileImageView.swift */,
 				D1E587042C2828DF00F3E452 /* SearchResultView.swift */,
+				D1E587082C282E4300F3E452 /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
+				D1E587092C282E4300F3E452 /* SettingView.swift in Sources */,
 				D18161002C1EA74A004BA146 /* UserDefault.swift in Sources */,
 				D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */,
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
@@ -446,6 +453,7 @@
 				D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */,
 				D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
+				D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */,
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */,
 				D18160F42C1C7395004BA146 /* SettingTableViewCell.swift in Sources */,
