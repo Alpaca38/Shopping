@@ -6,61 +6,15 @@
 //
 
 import UIKit
-import SnapKit
 
 class MainViewController: BaseViewController {
+    let emptyMainView = EmptyMainView()
+    let mainView = MainView()
     
-    lazy var searchBar = {
-        let bar = UISearchBar()
-        bar.delegate = self
-        bar.placeholder = "브랜드, 상품 등을 입력하세요."
-        self.view.addSubview(bar)
-        return bar
-    }()
-    
-    lazy var imageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.image = Image.empty
-        self.view.addSubview(view)
-        return view
-    }()
-    
-    lazy var emptyLabel = {
-        let label = UILabel()
-        label.font = Font.boldTitle
-        label.textAlignment = .center
-        label.text = "최근 검색어가 없어요"
-        self.view.addSubview(label)
-        return label
-    }()
-    
-    lazy var recentLabel = {
-        let label = UILabel()
-        label.font = Font.boldContent
-        label.text = "최근 검색"
-        self.view.addSubview(label)
-        return label
-    }()
-    
-    lazy var clearButton = {
-        let button = UIButton()
-        button.setAttributedTitle(NSAttributedString(string: "전체 삭제", attributes: [.font: Font.content]), for: .normal)
-        button.setTitleColor(Color.main, for: .normal)
-        button.addTarget(self, action: #selector(self.clearButtonTapped), for: .touchUpInside)
-        self.view.addSubview(button)
-        return button
-    }()
-    
-    lazy var tableView = {
-        let view = UITableView()
-        view.delegate = self
-        view.dataSource = self
-        view.separatorStyle = .none
-        view.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
-        self.view.addSubview(view)
-        return view
-    }()
+    override func loadView() {
+        super.loadView()
+        setupView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,51 +24,25 @@ class MainViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = UserDefaultsManager.user.mainNaviTitle
-        configureLayout()
-        tableView.reloadData()
+        setupView()
     }
     
-    func configureLayout() {
-        searchBar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
-        }
-        
+    func setupView() {
         if UserDefaultsManager.searchList.isEmpty {
-            imageView.snp.makeConstraints {
-                $0.center.equalToSuperview()
-                $0.size.equalTo(view.snp.width).multipliedBy(0.7)
-            }
-            
-            emptyLabel.snp.makeConstraints {
-                $0.top.equalTo(imageView.snp.bottom).offset(8)
-                $0.centerX.equalToSuperview()
+            if view != emptyMainView {
+                emptyMainView.searchBar.delegate = self
+                view = emptyMainView
             }
         } else {
-            recentLabel.snp.makeConstraints {
-                $0.top.equalTo(searchBar.snp.bottom).offset(20)
-                $0.leading.equalToSuperview().offset(20)
+            if view != mainView {
+                mainView.searchBar.delegate = self
+                mainView.tableView.delegate = self
+                mainView.tableView.dataSource = self
+                view = mainView
             }
-            
-            clearButton.snp.makeConstraints {
-                $0.centerY.equalTo(recentLabel)
-                $0.trailing.equalToSuperview().offset(-20)
-            }
-            
-            tableView.snp.makeConstraints {
-                $0.top.equalTo(recentLabel.snp.bottom).offset(8)
-                $0.horizontalEdges.equalToSuperview().inset(20)
-                $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            }
+            mainView.tableView.reloadData()
         }
-    }
-    
-}
-
-extension MainViewController {
-    @objc func clearButtonTapped() {
-        UserDefaultsManager.searchList = []
-        tableView.reloadData()
+        view.backgroundColor = .systemBackground
     }
 }
 
@@ -151,9 +79,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MainViewController: SearchTableViewCellDelegate {
     func didXMarkTapped(cell: UITableViewCell) {
-        if let indexPath = tableView.indexPath(for: cell) {
+        if let indexPath = mainView.tableView.indexPath(for: cell) {
             UserDefaultsManager.searchList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            mainView.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }

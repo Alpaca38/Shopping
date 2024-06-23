@@ -62,6 +62,8 @@
 		D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */; };
 		D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F42C27F0D000F3E452 /* ProfileView.swift */; };
 		D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */; };
+		D1E586FD2C280DBF00F3E452 /* EmptyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */; };
+		D1E586FF2C280EAA00F3E452 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FE2C280EAA00F3E452 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +118,8 @@
 		D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewDelegate.swift; sourceTree = "<group>"; };
 		D1E586F42C27F0D000F3E452 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewDelegate.swift; sourceTree = "<group>"; };
+		D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMainView.swift; sourceTree = "<group>"; };
+		D1E586FE2C280EAA00F3E452 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +304,8 @@
 			children = (
 				D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */,
 				D1E586F42C27F0D000F3E452 /* ProfileView.swift */,
+				D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */,
+				D1E586FE2C280EAA00F3E452 /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
 				D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */,
+				D1E586FD2C280DBF00F3E452 /* EmptyMainView.swift in Sources */,
 				D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
@@ -415,6 +422,7 @@
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
 				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D18160CC2C1BC9A5004BA146 /* ProfileImageViewController.swift in Sources */,
+				D1E586FF2C280EAA00F3E452 /* MainView.swift in Sources */,
 				D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
