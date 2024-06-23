@@ -58,6 +58,8 @@
 		D18160FD2C1D533E004BA146 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = D18160FC2C1D533E004BA146 /* SkeletonView */; };
 		D18161002C1EA74A004BA146 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160FF2C1EA74A004BA146 /* UserDefault.swift */; };
 		D18161022C1EA77F004BA146 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */; };
+		D1E586F12C27EE1800F3E452 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */; };
+		D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		D18160F72C1D41F3004BA146 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
 		D18160FF2C1EA74A004BA146 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		D18161012C1EA77F004BA146 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D1E586EF2C27EE0200F3E452 /* View */,
 				D18160FE2C1EA73F004BA146 /* Property Wrapper */,
 				D18160E22C1C19B0004BA146 /* Enum */,
 				D18160D32C1BD0B3004BA146 /* Model */,
@@ -248,6 +253,7 @@
 				D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */,
 				D18160DA2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift */,
 				D18160EB2C1C4C21004BA146 /* SearchResultCollectionViewCellDelegate.swift */,
+				D1E586F22C27EED100F3E452 /* OnBoardingViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -282,6 +288,14 @@
 				D18160FF2C1EA74A004BA146 /* UserDefault.swift */,
 			);
 			path = "Property Wrapper";
+			sourceTree = "<group>";
+		};
+		D1E586EF2C27EE0200F3E452 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */,
 				D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */,
 				D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */,
 				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
@@ -384,6 +399,7 @@
 				D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */,
 				D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */,
 				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
+				D1E586F12C27EE1800F3E452 /* OnBoardingView.swift in Sources */,
 				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
 				D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
