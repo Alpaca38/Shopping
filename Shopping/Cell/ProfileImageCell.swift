@@ -11,7 +11,7 @@ import SnapKit
 class ProfileImageCell: UICollectionViewCell {
     
     lazy var profileImageView = {
-        let view = ProfileImageView(borderWidth: Image.Border.inActive, borderColor: Color.lightGray, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.inActive)
+        let view = CircleImageView(borderWidth: Image.Border.inActive, borderColor: Color.lightGray, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.inActive)
         self.contentView.addSubview(view)
         return view
     }()

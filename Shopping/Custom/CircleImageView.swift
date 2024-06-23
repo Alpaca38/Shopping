@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileImageView: UIImageView {
+class CircleImageView: UIImageView {
     
     init(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat, alpha: CGFloat) {
         super.init(frame: .zero)

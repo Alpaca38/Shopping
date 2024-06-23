@@ -11,7 +11,7 @@ import SnapKit
 class SettingViewController: BaseViewController {
     
     lazy var profileImageView = {
-        let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.active)
+        let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.active)
         view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         self.view.addSubview(view)
         return view

@@ -16,7 +16,7 @@ class ProfileView: UIView {
     var nickname: String?
     
     lazy var profileImageView = {
-        let view = ProfileImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
+        let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true

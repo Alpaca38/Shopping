@@ -32,7 +32,7 @@
 		D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */; };
 		D18160BA2C1B09CC004BA146 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160B92C1B09CC004BA146 /* Button.swift */; };
 		D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */; };
-		D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */; };
+		D18160BE2C1B10F0004BA146 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160BD2C1B10F0004BA146 /* CircleImageView.swift */; };
 		D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */; };
 		D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C32C1B22E8004BA146 /* LiteralString.swift */; };
 		D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C72C1B27BB004BA146 /* CustomButton.swift */; };
@@ -64,6 +64,7 @@
 		D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */; };
 		D1E586FD2C280DBF00F3E452 /* EmptyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */; };
 		D1E586FF2C280EAA00F3E452 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FE2C280EAA00F3E452 /* MainView.swift */; };
+		D1E587032C2825CA00F3E452 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587022C2825CA00F3E452 /* ProfileImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,7 +90,7 @@
 		D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		D18160B92C1B09CC004BA146 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		D18160BD2C1B10F0004BA146 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextField.swift; sourceTree = "<group>"; };
 		D18160C32C1B22E8004BA146 /* LiteralString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteralString.swift; sourceTree = "<group>"; };
 		D18160C72C1B27BB004BA146 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewDelegate.swift; sourceTree = "<group>"; };
 		D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMainView.swift; sourceTree = "<group>"; };
 		D1E586FE2C280EAA00F3E452 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D1E587022C2825CA00F3E452 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +209,7 @@
 			children = (
 				D18160A42C1AF4B8004BA146 /* TabBarController.swift */,
 				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
-				D18160BD2C1B10F0004BA146 /* ProfileImageView.swift */,
+				D18160BD2C1B10F0004BA146 /* CircleImageView.swift */,
 				D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */,
 				D18160C72C1B27BB004BA146 /* CustomButton.swift */,
 				D18160E52C1C204B004BA146 /* FilterButton.swift */,
@@ -306,6 +308,7 @@
 				D1E586F42C27F0D000F3E452 /* ProfileView.swift */,
 				D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */,
 				D1E586FE2C280EAA00F3E452 /* MainView.swift */,
+				D1E587022C2825CA00F3E452 /* ProfileImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */,
+				D1E587032C2825CA00F3E452 /* ProfileImageView.swift in Sources */,
 				D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */,
 				D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */,
 				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
@@ -429,7 +433,7 @@
 				D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,
 				D18160E82C1C2680004BA146 /* SearchResultCollectionViewCell.swift in Sources */,
-				D18160BE2C1B10F0004BA146 /* ProfileImageView.swift in Sources */,
+				D18160BE2C1B10F0004BA146 /* CircleImageView.swift in Sources */,
 				D18160BA2C1B09CC004BA146 /* Button.swift in Sources */,
 				D18160E62C1C204B004BA146 /* FilterButton.swift in Sources */,
 				D18161022C1EA77F004BA146 /* UserDefaultsKeys.swift in Sources */,
