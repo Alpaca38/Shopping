@@ -9,7 +9,7 @@ import Foundation
 
 enum LiteralString {
     static let specialCharacter = "@#$%"
-    
+    static let appName = "EzyBuy"
     static let profileSetting = "PROFILE SETTING"
     static let setting = "SETTING"
     static let settingItem = "설정"

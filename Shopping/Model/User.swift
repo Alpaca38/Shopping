@@ -13,7 +13,7 @@ struct User: Codable {
     var registerDate: Date = Date()
     
     var mainNaviTitle: String {
-        return "\(nickname)'s MEANING OUT"
+        return "\(nickname)'s \(LiteralString.appName)"
     }
     
     var registerDateString: String {

@@ -15,7 +15,7 @@ class OnBoardingView: UIView {
     
     lazy var titleLabel = {
         let label = UILabel()
-        label.text = "MeaningOut"
+        label.text = LiteralString.appName
         label.font = Font.futuraBold
         label.textColor = Color.main
         label.textAlignment = .center
