@@ -40,9 +40,13 @@ class SearchResultViewController: BaseViewController {
             let _ = try validateQuery(query: searchText!)
             getShoppingData(sort: Sort.sim.rawValue)
         } catch ShoppingQueryError.whitespace {
-            self.view.makeToast("공백은 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+            DispatchQueue.main.async {
+                self.view.makeToast("공백은 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+            }
         } catch ShoppingQueryError.specialCharacter {
-            self.view.makeToast("특수문자는 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+            DispatchQueue.main.async {
+                self.view.makeToast("특수문자는 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
+            }
         } catch {
             
         }
