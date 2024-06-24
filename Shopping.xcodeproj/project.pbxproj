@@ -69,6 +69,7 @@
 		D1E587072C282B0500F3E452 /* SearchResultViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */; };
 		D1E587092C282E4300F3E452 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587082C282E4300F3E452 /* SettingView.swift */; };
 		D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */; };
+		D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewDelegate.swift; sourceTree = "<group>"; };
 		D1E587082C282E4300F3E452 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewDelegate.swift; sourceTree = "<group>"; };
+		D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 			children = (
 				D18160AC2C1AF764004BA146 /* Extension+UIColor.swift */,
 				D18160E92C1C3CA0004BA146 /* Extension+String.swift */,
+				D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
 				D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */,
+				D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */,
 				D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */,
 				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
 				D1E586F12C27EE1800F3E452 /* OnBoardingView.swift in Sources */,

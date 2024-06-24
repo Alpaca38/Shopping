@@ -31,20 +31,6 @@ class SettingViewController: BaseViewController {
 }
 
 private extension SettingViewController {
-    func showSelectAlert() {
-        let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화 됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "확인", style: .default) { _ in
-            SceneManager.shared.setNaviScene(viewController: OnBoardingViewController())
-            self.resetUserDefaults()
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-
-        alert.addAction(cancel)
-        alert.addAction(ok)
-        
-        present(alert, animated: true)
-    }
-    
     func resetUserDefaults() {
         UserDefaultsManager.user = User(image: Image.Profile.allCases[.random(in: 0..<Image.Profile.allCases.count)].rawValue)
         UserDefaultsManager.isLogin = false
@@ -67,7 +53,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == SettingOptions.allCases.firstIndex(of: SettingOptions.exit) {
-            showSelectAlert()
+            showAlert(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화 됩니다. 탈퇴 하시겠습니까?", buttonTitle: "확인") {
+                SceneManager.shared.setNaviScene(viewController: OnBoardingViewController())
+                self.resetUserDefaults()
+            }
         }
     }
     
