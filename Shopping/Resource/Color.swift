@@ -8,7 +8,7 @@
 import UIKit
 
 enum Color {
-    static let main = UIColor(hexCode: "EF8947")
+    static let main = UIColor(hexCode: "#CC00CC")
     static let black = UIColor(hexCode: "000000")
     static let gray = UIColor(hexCode: "828282")
     static let darkGray = UIColor(hexCode: "4C4C4C")
