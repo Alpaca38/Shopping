@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainView: UIView {
+class MainView: BaseView {
     lazy var searchBar = {
         let bar = UISearchBar()
         bar.placeholder = "브랜드, 상품 등을 입력하세요."
@@ -41,12 +41,7 @@ class MainView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    func configureLayout() {
+    override func configureLayout() {
         searchBar.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
             $0.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(10)
@@ -67,10 +62,6 @@ class MainView: UIView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

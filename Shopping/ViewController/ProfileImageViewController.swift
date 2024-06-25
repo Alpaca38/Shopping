@@ -11,7 +11,6 @@ class ProfileImageViewController: BaseViewController {
     let profileImageView = ProfileImageView()
     
     override func loadView() {
-        super.loadView()
         profileImageView.collectionView.delegate = self
         profileImageView.collectionView.dataSource = self
         view = profileImageView

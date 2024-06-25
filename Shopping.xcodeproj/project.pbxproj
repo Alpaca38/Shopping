@@ -70,6 +70,7 @@
 		D1E587092C282E4300F3E452 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587082C282E4300F3E452 /* SettingView.swift */; };
 		D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */; };
 		D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */; };
+		D1E5877B2C2B04DA00F3E452 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877A2C2B04DA00F3E452 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		D1E587082C282E4300F3E452 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewDelegate.swift; sourceTree = "<group>"; };
 		D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		D1E5877A2C2B04DA00F3E452 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D1E587792C2B04D100F3E452 /* Base */,
 				D1E586EF2C27EE0200F3E452 /* View */,
 				D18160FE2C1EA73F004BA146 /* Property Wrapper */,
 				D18160E22C1C19B0004BA146 /* Enum */,
@@ -218,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				D18160A42C1AF4B8004BA146 /* TabBarController.swift */,
-				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
 				D18160BD2C1B10F0004BA146 /* CircleImageView.swift */,
 				D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */,
 				D18160C72C1B27BB004BA146 /* CustomButton.swift */,
@@ -326,6 +328,15 @@
 				D1E587082C282E4300F3E452 /* SettingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D1E587792C2B04D100F3E452 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D1E5877A2C2B04DA00F3E452 /* BaseView.swift */,
+				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +468,7 @@
 				D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */,
 				D18160E12C1C15AD004BA146 /* SearchResult.swift in Sources */,
 				D18160B12C1AFA10004BA146 /* Image.swift in Sources */,
+				D1E5877B2C2B04DA00F3E452 /* BaseView.swift in Sources */,
 				D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */,
 				D18160D92C1C0034004BA146 /* SearchTableViewCell.swift in Sources */,
 				D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */,

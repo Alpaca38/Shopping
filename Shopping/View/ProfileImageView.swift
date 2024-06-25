@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileImageView: UIView {
+class ProfileImageView: BaseView {
     lazy var imageView = {
         let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
         view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
@@ -23,12 +23,7 @@ class ProfileImageView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    private func configureLayout() {
+    override func configureLayout() {
         imageView.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(30)
             $0.centerX.equalToSuperview()
@@ -52,10 +47,6 @@ class ProfileImageView: UIView {
         layout.minimumInteritemSpacing = cellSpacing
         layout.sectionInset = UIEdgeInsets(top: sectionSpacing, left: sectionSpacing, bottom: sectionSpacing, right: sectionSpacing)
         return layout
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }

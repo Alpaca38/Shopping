@@ -11,7 +11,6 @@ class OnBoardingViewController: BaseViewController {
     let onBoardingView = OnBoardingView()
     
     override func loadView() {
-        super.loadView()
         view = onBoardingView
     }
     

@@ -11,7 +11,6 @@ class ProfileViewController: BaseViewController {
     let profileView = ProfileView()
     
     override func loadView() {
-        super.loadView()
         view = profileView
     }
     

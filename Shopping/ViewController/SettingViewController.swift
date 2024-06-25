@@ -11,7 +11,6 @@ class SettingViewController: BaseViewController {
     let settingView = SettingView()
     
     override func loadView() {
-        super.loadView()
         settingView.tableView.dataSource = self
         settingView.tableView.delegate = self
         settingView.delegate = self

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class ProfileView: UIView {
+class ProfileView: BaseView {
     
     weak var delegate: ProfileViewDelegate?
     
@@ -57,12 +57,7 @@ class ProfileView: UIView {
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    func configureLayout() {
+    override func configureLayout() {
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(30)
             $0.centerX.equalToSuperview()
@@ -91,10 +86,6 @@ class ProfileView: UIView {
                 $0.horizontalEdges.equalToSuperview().inset(20)
             }
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

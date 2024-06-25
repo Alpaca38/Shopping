@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SettingView: UIView {
+class SettingView: BaseView {
     weak var delegate: SettingViewDelegate?
     
     lazy var profileImageView = {
@@ -66,12 +66,7 @@ class SettingView: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    func configureLayout() {
+    override func configureLayout() {
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(30)
             $0.leading.equalToSuperview().offset(20)
@@ -100,9 +95,6 @@ class SettingView: UIView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

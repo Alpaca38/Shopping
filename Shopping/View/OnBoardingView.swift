@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class OnBoardingView: UIView {
+class OnBoardingView: BaseView {
     
     weak var delegate: OnBoardingViewDelegate?
     
@@ -38,12 +38,7 @@ class OnBoardingView: UIView {
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    func configureLayout() {
+    override func configureLayout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(63)
             $0.centerX.equalToSuperview()
@@ -58,10 +53,6 @@ class OnBoardingView: UIView {
             $0.bottom.horizontalEdges.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
     }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
 
 extension OnBoardingView {

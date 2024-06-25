@@ -22,7 +22,6 @@ class SearchResultViewController: BaseViewController {
     }
     
     override func loadView() {
-        super.loadView()
         searchResultView.collectionView.dataSource = self
         searchResultView.collectionView.delegate = self
         searchResultView.collectionView.prefetchDataSource = self
