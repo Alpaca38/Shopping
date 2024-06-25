@@ -10,7 +10,7 @@ import SnapKit
 import Kingfisher
 import SkeletonView
 
-class SearchResultCollectionViewCell: UICollectionViewCell {
+class SearchResultCollectionViewCell: BaseCollectionViewCell {
     
     var delegate: SearchResultCollectionViewCellDelegate?
     
@@ -62,12 +62,10 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureLayout()
         self.isSkeletonable = true
-        
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         imageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.65)
@@ -114,10 +112,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
             likeButton.backgroundColor = Color.black.withAlphaComponent(0.15)
         }
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 

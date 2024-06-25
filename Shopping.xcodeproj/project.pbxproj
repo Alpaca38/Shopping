@@ -71,6 +71,8 @@
 		D1E5870B2C28300D00F3E452 /* SettingViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */; };
 		D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */; };
 		D1E5877B2C2B04DA00F3E452 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877A2C2B04DA00F3E452 /* BaseView.swift */; };
+		D1E5877D2C2B078B00F3E452 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877C2C2B078B00F3E452 /* BaseCollectionViewCell.swift */; };
+		D1E5877F2C2B080B00F3E452 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewDelegate.swift; sourceTree = "<group>"; };
 		D1E587312C290C8F00F3E452 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		D1E5877A2C2B04DA00F3E452 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D1E5877C2C2B078B00F3E452 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +339,8 @@
 			children = (
 				D1E5877A2C2B04DA00F3E452 /* BaseView.swift */,
 				D18160A62C1AF5AF004BA146 /* BaseViewController.swift */,
+				D1E5877C2C2B078B00F3E452 /* BaseCollectionViewCell.swift */,
+				D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E586F32C27EED100F3E452 /* OnBoardingViewDelegate.swift in Sources */,
+				D1E5877D2C2B078B00F3E452 /* BaseCollectionViewCell.swift in Sources */,
 				D1E587032C2825CA00F3E452 /* ProfileImageView.swift in Sources */,
 				D18160EE2C1C5845004BA146 /* DetailViewController.swift in Sources */,
 				D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */,
@@ -447,6 +454,7 @@
 				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
 				D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
+				D1E5877F2C2B080B00F3E452 /* BaseTableViewCell.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D1E587092C282E4300F3E452 /* SettingView.swift in Sources */,
 				D18161002C1EA74A004BA146 /* UserDefault.swift in Sources */,

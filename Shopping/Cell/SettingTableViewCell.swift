@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-class SettingTableViewCell: UITableViewCell {
-    
+class SettingTableViewCell: BaseTableViewCell {
     lazy var titleLabel = {
         let label = UILabel()
         label.font = Font.content
@@ -29,14 +28,8 @@ class SettingTableViewCell: UITableViewCell {
         self.contentView.addSubview(view)
         return view
     }()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureLayout()
-        selectionStyle = .none
-    }
     
-    func configureLayout() {
+    override func configureLayout() {
         titleLabel.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.top.bottom.equalToSuperview().inset(10)
@@ -60,9 +53,5 @@ class SettingTableViewCell: UITableViewCell {
             subTitleLabel.text = "\(UserDefaultsManager.likeList.count)개의 상품"
             likeImage.image = Image.likeSelected
         }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

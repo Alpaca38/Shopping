@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SearchTableViewCell: UITableViewCell {
+class SearchTableViewCell: BaseTableViewCell {
     
     weak var delegate: SearchTableViewCellDelegate?
     
@@ -39,14 +39,8 @@ class SearchTableViewCell: UITableViewCell {
         self.contentView.addSubview(view)
         return view
     }()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .none
-        configureLayout()
-    }
     
-    func configureLayout() {
+    override func configureLayout() {
         clockImageView.snp.makeConstraints {
             $0.leading.equalToSuperview()
             $0.centerY.equalToSuperview()
@@ -69,11 +63,6 @@ class SearchTableViewCell: UITableViewCell {
     func configure(index: Int) {
         contentLabel.text = UserDefaultsManager.searchList[index]
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
 
 extension SearchTableViewCell {

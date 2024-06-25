@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileImageCell: UICollectionViewCell {
+class ProfileImageCell: BaseCollectionViewCell {
     
     lazy var profileImageView = {
         let view = CircleImageView(borderWidth: Image.Border.inActive, borderColor: Color.lightGray, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.inActive)
@@ -16,12 +16,7 @@ class ProfileImageCell: UICollectionViewCell {
         return view
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureLayout()
-    }
-    
-    func configureLayout() {
+    override func configureLayout() {
         profileImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -40,9 +35,5 @@ class ProfileImageCell: UICollectionViewCell {
             profileImageView.alpha = Image.Alpha.inActive
         }
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
