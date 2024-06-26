@@ -10,7 +10,8 @@ import SnapKit
 
 class SearchTableViewCell: BaseTableViewCell {
     
-    weak var delegate: SearchTableViewCellDelegate?
+//    weak var delegate: SearchTableViewCellDelegate?
+    var didXmarkTapped: (() -> Void)?
     
     lazy var clockImageView = {
         let view = UIImageView()
@@ -68,6 +69,7 @@ class SearchTableViewCell: BaseTableViewCell {
 extension SearchTableViewCell {
     @objc func xmarkTapped() {
         UserDefaultsManager.searchList.removeAll { $0 == contentLabel.text }
-        delegate?.didXMarkTapped()
+//        delegate?.didXMarkTapped()
+        didXmarkTapped?()
     }
 }

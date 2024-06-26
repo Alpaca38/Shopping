@@ -73,7 +73,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as! SearchTableViewCell
         cell.configure(index: indexPath.row)
-        cell.delegate = self
+        cell.didXmarkTapped = { [weak self] in
+            guard let self else { return }
+            searchView.tableView.reloadData()
+        }
+//        cell.delegate = self
         return cell
     }
     
@@ -84,8 +88,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension SearchViewController: SearchTableViewCellDelegate {
-    func didXMarkTapped() {
-        searchView.tableView.reloadData()
-    }
-}
+//extension SearchViewController: SearchTableViewCellDelegate {
+//    func didXMarkTapped() {
+//        searchView.tableView.reloadData()
+//    }
+//}
