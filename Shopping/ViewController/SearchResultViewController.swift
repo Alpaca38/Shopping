@@ -14,7 +14,7 @@ class SearchResultViewController: BaseViewController {
     
     var searchText: String?
     var page = 1
-    var list = SearchResult(lastBuildDate: "", total: 0, start: 0, display: 0, items: []) {
+    var list = SearchShoppingResult(lastBuildDate: "", total: 0, start: 0, display: 0, items: []) {
         didSet {
             searchResultView.totalLabel.text = list.totalString
             searchResultView.collectionView.reloadData()

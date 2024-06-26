@@ -12,7 +12,7 @@ import SnapKit
 class DetailViewController: BaseViewController {
     
     var titleText: String?
-    var data: Item?
+    var data: SearchItem?
     
     lazy var webView = {
         let view = WKWebView()

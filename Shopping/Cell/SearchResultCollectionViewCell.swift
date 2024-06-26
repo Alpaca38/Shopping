@@ -94,7 +94,7 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
         
     }
     
-    func configure(data: Item) {
+    func configure(data: SearchItem) {
         let url = URL(string: data.image)
         imageView.kf.setImage(with: url)
         

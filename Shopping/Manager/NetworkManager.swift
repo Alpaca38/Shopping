@@ -12,7 +12,7 @@ class NetworkManager {
     private init() { }
     static let shared = NetworkManager()
     
-    func getShoppingData(query: String, sort: Sort.RawValue, page: Int, completion: @escaping (Result<SearchResult, Error>) -> Void) {
+    func getShoppingData(query: String, sort: Sort.RawValue, page: Int, completion: @escaping (Result<SearchShoppingResult, Error>) -> Void) {
         let url = "https://openapi.naver.com/v1/search/shop.json"
         
         let parameters: Parameters = [
@@ -32,7 +32,7 @@ class NetworkManager {
                    parameters: parameters,
                    headers: header)
         .validate()
-        .responseDecodable(of: SearchResult.self) { response in
+        .responseDecodable(of: SearchShoppingResult.self) { response in
             switch response.result {
             case .success(let value):
                 completion(.success(value))
