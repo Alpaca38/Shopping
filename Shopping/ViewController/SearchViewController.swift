@@ -11,6 +11,15 @@ class SearchViewController: BaseViewController {
     let emptyMainView = EmptyMainView()
     let searchView = SearchView()
     
+    var list: [String] {
+        get {
+            return UserDefaultsManager.searchList
+        }
+        set {
+            UserDefaultsManager.searchList = newValue
+            searchView.tableView.reloadData()
+        }
+    }
     override func loadView() {
         super.loadView()
         setupView()
@@ -27,7 +36,7 @@ class SearchViewController: BaseViewController {
     }
     
     func setupView() {
-        if UserDefaultsManager.searchList.isEmpty {
+        if list.isEmpty {
             if view != emptyMainView {
                 emptyMainView.searchBar.delegate = self
                 view = emptyMainView
@@ -39,7 +48,6 @@ class SearchViewController: BaseViewController {
                 searchView.tableView.dataSource = self
                 view = searchView
             }
-            searchView.tableView.reloadData()
         }
         view.backgroundColor = .systemBackground
     }
@@ -47,8 +55,8 @@ class SearchViewController: BaseViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if UserDefaultsManager.searchList.contains(searchBar.text!) == false {
-            UserDefaultsManager.searchList.insert(searchBar.text!, at: 0)
+        if list.contains(searchBar.text!) == false {
+            list.insert(searchBar.text!, at: 0)
         }
         let vc = SearchResultViewController()
         vc.searchText = searchBar.text!
@@ -59,7 +67,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        UserDefaultsManager.searchList.count
+        list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,16 +79,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SearchResultViewController()
-        vc.searchText = UserDefaultsManager.searchList[indexPath.row]
+        vc.searchText = list[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension SearchViewController: SearchTableViewCellDelegate {
-    func didXMarkTapped(cell: UITableViewCell) {
-        if let indexPath = searchView.tableView.indexPath(for: cell) {
-            UserDefaultsManager.searchList.remove(at: indexPath.row)
-            searchView.tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
+    func didXMarkTapped() {
+        searchView.tableView.reloadData()
     }
 }

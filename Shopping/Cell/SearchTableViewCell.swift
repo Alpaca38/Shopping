@@ -67,6 +67,7 @@ class SearchTableViewCell: BaseTableViewCell {
 
 extension SearchTableViewCell {
     @objc func xmarkTapped() {
-        delegate?.didXMarkTapped(cell: self)
+        UserDefaultsManager.searchList.removeAll { $0 == contentLabel.text }
+        delegate?.didXMarkTapped()
     }
 }

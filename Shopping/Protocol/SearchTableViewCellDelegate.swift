@@ -8,5 +8,5 @@
 import UIKit
 
 protocol SearchTableViewCellDelegate: AnyObject {
-    func didXMarkTapped(cell: UITableViewCell)
+    func didXMarkTapped()
 }
