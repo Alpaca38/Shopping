@@ -142,9 +142,7 @@ private extension SearchResultViewController {
                     if !self.list.items.isEmpty {
                         self.searchResultView.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
                     }
-                    DispatchQueue.main.async { [weak self] in
-                        self?.searchResultView.collectionView.hideSkeleton()
-                    }
+                    self.searchResultView.collectionView.hideSkeleton()
                 } else {
                     self.list.items.append(contentsOf: success.items)
                 }
