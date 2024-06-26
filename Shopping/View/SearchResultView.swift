@@ -12,7 +12,7 @@ import SkeletonView
 class SearchResultView: UIView {
     
     weak var delegate: SearchResultViewDelegate?
-    var selectedButton: UIButton?
+    lazy var selectedButton = simButton
     var selectButtonIndex: Int = 0
     
     lazy var totalLabel = {
@@ -34,6 +34,8 @@ class SearchResultView: UIView {
     lazy var simButton = {
         let button = FilterButton(title: Sort.sim.sortString)
         button.tag = 0
+        button.backgroundColor = Color.darkGray
+        button.setTitleColor(Color.white, for: .normal)
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -110,9 +112,9 @@ class SearchResultView: UIView {
 }
 
 extension SearchResultView {
-    @objc func filterButtonTapped(_ sender: UIButton) {
-        selectedButton?.backgroundColor = Color.white
-        selectedButton?.setTitleColor(Color.black, for: .normal)
+    @objc func filterButtonTapped(_ sender: FilterButton) {
+        selectedButton.backgroundColor = Color.white
+        selectedButton.setTitleColor(Color.black, for: .normal)
         sender.backgroundColor = Color.darkGray
         sender.setTitleColor(Color.white, for: .normal)
         selectedButton = sender
