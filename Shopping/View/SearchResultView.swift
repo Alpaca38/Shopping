@@ -113,6 +113,7 @@ class SearchResultView: UIView {
 
 extension SearchResultView {
     @objc func filterButtonTapped(_ sender: FilterButton) {
+        guard selectButtonIndex != sender.tag else { return }
         selectedButton.backgroundColor = Color.white
         selectedButton.setTitleColor(Color.black, for: .normal)
         sender.backgroundColor = Color.darkGray
