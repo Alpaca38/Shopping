@@ -73,6 +73,7 @@
 		D1E5877B2C2B04DA00F3E452 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877A2C2B04DA00F3E452 /* BaseView.swift */; };
 		D1E5877D2C2B078B00F3E452 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877C2C2B078B00F3E452 /* BaseCollectionViewCell.swift */; };
 		D1E5877F2C2B080B00F3E452 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */; };
+		D1E5878D2C2BFEFA00F3E452 /* NaverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		D1E5877A2C2B04DA00F3E452 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D1E5877C2C2B078B00F3E452 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D1E5878B2C2BFEDC00F3E452 /* Network */,
 				D1E587792C2B04D100F3E452 /* Base */,
 				D1E586EF2C27EE0200F3E452 /* View */,
 				D18160FE2C1EA73F004BA146 /* Property Wrapper */,
@@ -258,7 +261,6 @@
 			children = (
 				D18160B52C1B0145004BA146 /* SceneManager.swift */,
 				D18160B72C1B0161004BA146 /* UserDefaultsManager.swift */,
-				D11DA7CE2C24143600D2E535 /* NetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -343,6 +345,15 @@
 				D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		D1E5878B2C2BFEDC00F3E452 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D11DA7CE2C24143600D2E535 /* NetworkManager.swift */,
+				D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,6 +466,7 @@
 				D18160DB2C1C08C0004BA146 /* SearchTableViewCellDelegate.swift in Sources */,
 				D18160922C1AF3DD004BA146 /* APIKey.swift in Sources */,
 				D1E5877F2C2B080B00F3E452 /* BaseTableViewCell.swift in Sources */,
+				D1E5878D2C2BFEFA00F3E452 /* NaverAPI.swift in Sources */,
 				D18160A52C1AF4B9004BA146 /* TabBarController.swift in Sources */,
 				D1E587092C282E4300F3E452 /* SettingView.swift in Sources */,
 				D18161002C1EA74A004BA146 /* UserDefault.swift in Sources */,

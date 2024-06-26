@@ -134,7 +134,7 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
 
 private extension SearchResultViewController {
     func getShoppingData(sort: Sort.RawValue) {
-        NetworkManager.shared.getShoppingData(query: searchText!, sort: sort, page: page) { result in
+        NetworkManager.shared.getNaverAPI(api: .searchShop(query: searchText!, page: page, sort: sort), responseType: SearchShoppingResult.self) { result in
             switch result {
             case .success(let success):
                 if self.page == 1 {
@@ -149,7 +149,7 @@ private extension SearchResultViewController {
                     self.list.items.append(contentsOf: success.items)
                 }
             case .failure(let failure):
-                self.view.makeToast("\(failure.localizedDescription)", duration: 2.0, position: .center)
+                self.view.makeToast("쇼핑 정보를 가져오지 못했습니다. \(failure.localizedDescription)", duration: 2.0, position: .center)
             }
         }
     }

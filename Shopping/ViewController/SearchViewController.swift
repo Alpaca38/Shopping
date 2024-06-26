@@ -9,7 +9,7 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     let emptyMainView = EmptyMainView()
-    let mainView = SearchView()
+    let searchView = SearchView()
     
     override func loadView() {
         super.loadView()
@@ -33,13 +33,13 @@ class SearchViewController: BaseViewController {
                 view = emptyMainView
             }
         } else {
-            if view != mainView {
-                mainView.searchBar.delegate = self
-                mainView.tableView.delegate = self
-                mainView.tableView.dataSource = self
-                view = mainView
+            if view != searchView {
+                searchView.searchBar.delegate = self
+                searchView.tableView.delegate = self
+                searchView.tableView.dataSource = self
+                view = searchView
             }
-            mainView.tableView.reloadData()
+            searchView.tableView.reloadData()
         }
         view.backgroundColor = .systemBackground
     }
@@ -78,9 +78,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: SearchTableViewCellDelegate {
     func didXMarkTapped(cell: UITableViewCell) {
-        if let indexPath = mainView.tableView.indexPath(for: cell) {
+        if let indexPath = searchView.tableView.indexPath(for: cell) {
             UserDefaultsManager.searchList.remove(at: indexPath.row)
-            mainView.tableView.deleteRows(at: [indexPath], with: .automatic)
+            searchView.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 }
