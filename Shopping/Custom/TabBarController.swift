@@ -14,7 +14,7 @@ class TabBarController: UITabBarController {
         tabBar.tintColor = Color.main
         tabBar.unselectedItemTintColor = Color.gray
         
-        let main = UINavigationController(rootViewController: MainViewController())
+        let main = UINavigationController(rootViewController: SearchViewController())
         main.tabBarItem = UITabBarItem(title: LiteralString.search, image: Image.search, tag: 0)
         
         let setting = UINavigationController(rootViewController: SettingViewController())

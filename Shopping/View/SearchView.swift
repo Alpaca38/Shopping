@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class MainView: BaseView {
+class SearchView: BaseView {
     lazy var searchBar = {
         let bar = UISearchBar()
         bar.placeholder = "브랜드, 상품 등을 입력하세요."
@@ -65,7 +65,7 @@ class MainView: BaseView {
     }
 }
 
-extension MainView {
+extension SearchView {
     @objc func clearButtonTapped() {
         UserDefaultsManager.searchList = []
         tableView.reloadData()

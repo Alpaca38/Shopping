@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class SearchViewController: BaseViewController {
     let emptyMainView = EmptyMainView()
-    let mainView = MainView()
+    let mainView = SearchView()
     
     override func loadView() {
         super.loadView()
@@ -45,7 +45,7 @@ class MainViewController: BaseViewController {
     }
 }
 
-extension MainViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if UserDefaultsManager.searchList.contains(searchBar.text!) == false {
             UserDefaultsManager.searchList.insert(searchBar.text!, at: 0)
@@ -57,7 +57,7 @@ extension MainViewController: UISearchBarDelegate {
     }
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         UserDefaultsManager.searchList.count
     }
@@ -76,7 +76,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MainViewController: SearchTableViewCellDelegate {
+extension SearchViewController: SearchTableViewCellDelegate {
     func didXMarkTapped(cell: UITableViewCell) {
         if let indexPath = mainView.tableView.indexPath(for: cell) {
             UserDefaultsManager.searchList.remove(at: indexPath.row)

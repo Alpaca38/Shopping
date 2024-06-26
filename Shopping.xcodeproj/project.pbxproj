@@ -36,7 +36,7 @@
 		D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */; };
 		D18160C42C1B22E8004BA146 /* LiteralString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C32C1B22E8004BA146 /* LiteralString.swift */; };
 		D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C72C1B27BB004BA146 /* CustomButton.swift */; };
-		D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C92C1BC81E004BA146 /* MainViewController.swift */; };
+		D18160CA2C1BC81E004BA146 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160C92C1BC81E004BA146 /* SearchViewController.swift */; };
 		D18160CC2C1BC9A5004BA146 /* ProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160CB2C1BC9A5004BA146 /* ProfileImageViewController.swift */; };
 		D18160CF2C1BCC93004BA146 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */; };
 		D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */; };
@@ -63,7 +63,7 @@
 		D1E586F52C27F0D000F3E452 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F42C27F0D000F3E452 /* ProfileView.swift */; };
 		D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */; };
 		D1E586FD2C280DBF00F3E452 /* EmptyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */; };
-		D1E586FF2C280EAA00F3E452 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FE2C280EAA00F3E452 /* MainView.swift */; };
+		D1E586FF2C280EAA00F3E452 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E586FE2C280EAA00F3E452 /* SearchView.swift */; };
 		D1E587032C2825CA00F3E452 /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587022C2825CA00F3E452 /* ProfileImageView.swift */; };
 		D1E587052C2828DF00F3E452 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587042C2828DF00F3E452 /* SearchResultView.swift */; };
 		D1E587072C282B0500F3E452 /* SearchResultViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */; };
@@ -102,7 +102,7 @@
 		D18160C12C1B1B2F004BA146 /* NicknameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextField.swift; sourceTree = "<group>"; };
 		D18160C32C1B22E8004BA146 /* LiteralString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteralString.swift; sourceTree = "<group>"; };
 		D18160C72C1B27BB004BA146 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		D18160C92C1BC81E004BA146 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D18160C92C1BC81E004BA146 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D18160CB2C1BC9A5004BA146 /* ProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewController.swift; sourceTree = "<group>"; };
 		D18160CE2C1BCC93004BA146 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		D18160D12C1BCD0D004BA146 /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		D1E586F42C27F0D000F3E452 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewDelegate.swift; sourceTree = "<group>"; };
 		D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMainView.swift; sourceTree = "<group>"; };
-		D1E586FE2C280EAA00F3E452 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D1E586FE2C280EAA00F3E452 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D1E587022C2825CA00F3E452 /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		D1E587042C2828DF00F3E452 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewDelegate.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 			children = (
 				D181607C2C1AF14F004BA146 /* OnBoardingViewController.swift */,
 				D18160BB2C1B0FAA004BA146 /* ProfileViewController.swift */,
-				D18160C92C1BC81E004BA146 /* MainViewController.swift */,
+				D18160C92C1BC81E004BA146 /* SearchViewController.swift */,
 				D18160CB2C1BC9A5004BA146 /* ProfileImageViewController.swift */,
 				D18160DC2C1C0DC8004BA146 /* SearchResultViewController.swift */,
 				D18160ED2C1C5845004BA146 /* DetailViewController.swift */,
@@ -326,7 +326,7 @@
 				D1E586F02C27EE1800F3E452 /* OnBoardingView.swift */,
 				D1E586F42C27F0D000F3E452 /* ProfileView.swift */,
 				D1E586FC2C280DBF00F3E452 /* EmptyMainView.swift */,
-				D1E586FE2C280EAA00F3E452 /* MainView.swift */,
+				D1E586FE2C280EAA00F3E452 /* SearchView.swift */,
 				D1E587022C2825CA00F3E452 /* ProfileImageView.swift */,
 				D1E587042C2828DF00F3E452 /* SearchResultView.swift */,
 				D1E587082C282E4300F3E452 /* SettingView.swift */,
@@ -448,7 +448,7 @@
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
 				D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */,
 				D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */,
-				D18160CA2C1BC81E004BA146 /* MainViewController.swift in Sources */,
+				D18160CA2C1BC81E004BA146 /* SearchViewController.swift in Sources */,
 				D18160BC2C1B0FAA004BA146 /* ProfileViewController.swift in Sources */,
 				D1E586F12C27EE1800F3E452 /* OnBoardingView.swift in Sources */,
 				D18160C22C1B1B2F004BA146 /* NicknameTextField.swift in Sources */,
@@ -462,7 +462,7 @@
 				D18160B62C1B0145004BA146 /* SceneManager.swift in Sources */,
 				D18160AF2C1AF8BC004BA146 /* Font.swift in Sources */,
 				D18160CC2C1BC9A5004BA146 /* ProfileImageViewController.swift in Sources */,
-				D1E586FF2C280EAA00F3E452 /* MainView.swift in Sources */,
+				D1E586FF2C280EAA00F3E452 /* SearchView.swift in Sources */,
 				D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
