@@ -50,10 +50,11 @@ class DetailViewController: BaseViewController {
 
 private extension DetailViewController {
     @objc func likeButtonTapped() {
-        if UserDefaultsManager.likeList.contains(data!.productId) {
-            UserDefaultsManager.likeList.removeAll { $0 == data!.productId }
+        guard let data else { return }
+        if UserDefaultsManager.likeList.contains(data.productId) {
+            UserDefaultsManager.likeList.remove(data.productId)
         } else {
-            UserDefaultsManager.likeList.append(data!.productId)
+            UserDefaultsManager.likeList.insert(data.productId)
         }
         setNavigationItem()
     }

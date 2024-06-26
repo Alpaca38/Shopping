@@ -19,6 +19,6 @@ class UserDefaultsManager {
     @UserDefault(key: .searchList, defaultValue: [], isCustomObject: false)
     static var searchList: [String]!
     
-    @UserDefault(key: .likeList, defaultValue: [], isCustomObject: false)
-    static var likeList: [String]!
+    @UserDefault(key: .likeList, defaultValue: Set<String>(), isCustomObject: true)
+    static var likeList: Set<String>!
 }

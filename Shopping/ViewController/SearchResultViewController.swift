@@ -123,9 +123,9 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
         if let indexPath = searchResultView.collectionView.indexPath(for: cell) {
             let productId = list.items[indexPath.item].productId
             if UserDefaultsManager.likeList.contains(productId) {
-                UserDefaultsManager.likeList.removeAll { $0 == productId }
+                UserDefaultsManager.likeList.remove(productId)
             } else {
-                UserDefaultsManager.likeList.append(list.items[indexPath.item].productId)
+                UserDefaultsManager.likeList.insert(productId)
             }
             searchResultView.collectionView.reloadItems(at: [indexPath])
         }
