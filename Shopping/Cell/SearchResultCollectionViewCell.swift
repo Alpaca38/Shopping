@@ -96,7 +96,15 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
     
     func configure(data: SearchItem) {
         let url = URL(string: data.image)
-        imageView.kf.setImage(with: url)
+        let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
+        imageView.kf.setImage(
+            with: url,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .cacheOriginalImage
+            ]
+        )
         
         mallLabel.text = data.mallName
         
