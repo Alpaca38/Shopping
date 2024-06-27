@@ -149,7 +149,7 @@ private extension SearchResultViewController {
                     self.list.items.append(contentsOf: success.items)
                 }
             case .failure(let failure):
-                self.view.makeToast("쇼핑 정보를 가져오지 못했습니다. \(failure.localizedDescription)", duration: 2.0, position: .center)
+                self.view.makeToast("\(failure.rawValue)", duration: 2.0, position: .center)
             }
         }
     }
