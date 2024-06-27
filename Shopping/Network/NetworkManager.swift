@@ -13,7 +13,8 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     func getNaverAPI<T: Decodable>(api: NaverAPI, responseType: T.Type, completion: @escaping(Result<T, Error>) -> Void ) {
-        AF.request(api.endpoint,
+        guard let url = api.endpoint else { return }
+        AF.request(url,
                    method: api.method,
                    parameters: api.parameter,
                    headers: api.header)

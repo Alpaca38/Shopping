@@ -36,7 +36,8 @@ class SearchResultViewController: BaseViewController {
         
         searchResultView.collectionView.showSkeleton()
         do {
-            let _ = try validateQuery(query: searchText!)
+            guard let searchText else { return }
+            let _ = try validateQuery(query: searchText)
             getShoppingData(sort: Sort.sim.rawValue)
         } catch ShoppingQueryError.whitespace {
             DispatchQueue.main.async {
@@ -134,7 +135,8 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
 
 private extension SearchResultViewController {
     func getShoppingData(sort: Sort.RawValue) {
-        NetworkManager.shared.getNaverAPI(api: .searchShop(query: searchText!, page: page, sort: sort), responseType: SearchShoppingResult.self) { result in
+        guard let searchText else { return }
+        NetworkManager.shared.getNaverAPI(api: .searchShop(query: searchText, page: page, sort: sort), responseType: SearchShoppingResult.self) { result in
             switch result {
             case .success(let success):
                 if self.page == 1 {

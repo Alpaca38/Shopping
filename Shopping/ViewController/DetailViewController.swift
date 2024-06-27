@@ -16,7 +16,7 @@ class DetailViewController: BaseViewController {
     
     lazy var webView = {
         let view = WKWebView()
-        let url = URL(string: data!.link)!
+        guard let data, let url = URL(string: data.link) else { return view }
         view.load(URLRequest(url: url))
         self.view.addSubview(view)
         return view
@@ -37,8 +37,9 @@ class DetailViewController: BaseViewController {
     func setNavigationItem() {
         navigationItem.title = data?.title.asAttributedString().map { $0.string }
         
+        guard let data else { return }
         var image: UIImage?
-        if UserDefaultsManager.likeList.contains(data!.productId) {
+        if UserDefaultsManager.likeList.contains(data.productId) {
             image = Image.likeSelected
         } else {
             image = Image.likeUnSelected?.withRenderingMode(.alwaysOriginal)

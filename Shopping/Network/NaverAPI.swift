@@ -15,10 +15,10 @@ enum NaverAPI {
         return "https://openapi.naver.com/v1/"
     }
     
-    var endpoint: URL {
+    var endpoint: URL? {
         switch self {
         case .searchShop:
-            return URL(string: baseURL + "search/shop.json")!
+            return URL(string: baseURL + "search/shop.json")
         }
     }
     

@@ -93,7 +93,8 @@ class ProfileView: BaseView {
 extension ProfileView {
     @objc func completeButtonTapped() {
         if textFieldStateLabel.text == TextFieldState.valid {
-            UserDefaultsManager.user.nickname = nickname!
+            guard let nickname = nickname else { return }
+            UserDefaultsManager.user.nickname = nickname
             UserDefaultsManager.isLogin = true
             SceneManager.shared.setScene(viewController: TabBarController())
         } else {
