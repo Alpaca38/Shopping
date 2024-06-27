@@ -75,6 +75,7 @@
 		D1E5877F2C2B080B00F3E452 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */; };
 		D1E5878D2C2BFEFA00F3E452 /* NaverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */; };
 		D1E587932C2D072E00F3E452 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587922C2D072E00F3E452 /* APIError.swift */; };
+		D1E587972C2D539A00F3E452 /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587962C2D539A00F3E452 /* URLComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,7 @@
 		D1E5877E2C2B080B00F3E452 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPI.swift; sourceTree = "<group>"; };
 		D1E587922C2D072E00F3E452 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		D1E587962C2D539A00F3E452 /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 				D11DA7CE2C24143600D2E535 /* NetworkManager.swift */,
 				D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */,
 				D1E587922C2D072E00F3E452 /* APIError.swift */,
+				D1E587962C2D539A00F3E452 /* URLComponent.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				D18160F82C1D41F3004BA146 /* TextFieldState.swift in Sources */,
 				D18160E42C1C19BE004BA146 /* Sort.swift in Sources */,
 				D181607D2C1AF14F004BA146 /* OnBoardingViewController.swift in Sources */,
+				D1E587972C2D539A00F3E452 /* URLComponent.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
 				D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */,

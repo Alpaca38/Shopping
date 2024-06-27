@@ -38,7 +38,8 @@ class SearchResultViewController: BaseViewController {
         do {
             guard let searchText else { return }
             let _ = try validateQuery(query: searchText)
-            getShoppingData(sort: Sort.sim.rawValue)
+//            getShoppingData(sort: Sort.sim.rawValue)
+            getShoppingDataURLSession(sort: Sort.sim.rawValue)
         } catch ShoppingQueryError.whitespace {
             DispatchQueue.main.async {
                 self.view.makeToast("공백은 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
@@ -98,7 +99,8 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
         indexPaths.forEach {
             if list.items.count - 4 == $0.item {
                 page += 1
-                getShoppingData(sort: Sort.allCases[searchResultView.selectButtonIndex].rawValue)
+//                getShoppingData(sort: Sort.allCases[searchResultView.selectButtonIndex].rawValue)
+                getShoppingDataURLSession(sort: Sort.allCases[searchResultView.selectButtonIndex].rawValue)
             }
         }
     }
@@ -153,11 +155,32 @@ private extension SearchResultViewController {
             }
         }
     }
+    
+    func getShoppingDataURLSession(sort: Sort.RawValue) {
+        guard let searchText else { return }
+        NetworkManager.shared.getNaverAPIURLSession(urlComponent: .searchShop(query: searchText, page: page, sort: sort), responseType: SearchShoppingResult.self) { result in
+            switch result {
+            case .success(let success):
+                if self.page == 1 {
+                    self.list = success
+                    if !self.list.items.isEmpty {
+                        self.searchResultView.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+                    }
+                    self.searchResultView.collectionView.hideSkeleton()
+                } else {
+                    self.list.items.append(contentsOf: success.items)
+                }
+            case .failure(let failure):
+                self.view.makeToast("\(failure.rawValue)", duration: 2.0, position: .center)
+            }
+        }
+    }
 }
 
 extension SearchResultViewController: SearchResultViewDelegate {
     func didfilterButtonTapped(index: Int) {
         page = 1
-        getShoppingData(sort: Sort.allCases[index].rawValue)
+//        getShoppingData(sort: Sort.allCases[index].rawValue)
+        getShoppingDataURLSession(sort: Sort.allCases[index].rawValue)
     }
 }

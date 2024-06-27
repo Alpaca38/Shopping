@@ -16,4 +16,9 @@ enum APIError: String, Error {
     case requestLimit = "API 호출 허용량을 초과했습니다."
     case serverError = "서버에 오류가 발생해 응답할 수 업습니다.."
     case networkDelay = "요청 대기시간을 초과했습니다. 네트워크 상태를 확인해주세요."
+    
+    case failedRequest = "요청에 실패하였습니다."
+    case invalidResponse = "잘못된 응답입니다."
+    case noData = "반환된 데이터가 없습니다."
+    case invalidData = "잘못된 데이터가 반환되고 있습니다."
 }
