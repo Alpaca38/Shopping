@@ -22,10 +22,9 @@ class ProfileImageCell: BaseCollectionViewCell {
         }
     }
     
-    func configure(index: Int) {
+    func configure(index: Int, isSelected: Bool) {
         profileImageView.image = Image.Profile.allCases[index].profileImage
-        
-        if index == UserDefaultsManager.user.image {
+        if isSelected {
             profileImageView.layer.borderWidth = Image.Border.active
             profileImageView.layer.borderColor = Color.main.cgColor
             profileImageView.alpha = Image.Alpha.active

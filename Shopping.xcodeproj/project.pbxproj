@@ -76,6 +76,7 @@
 		D1E5878D2C2BFEFA00F3E452 /* NaverAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */; };
 		D1E587932C2D072E00F3E452 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587922C2D072E00F3E452 /* APIError.swift */; };
 		D1E587972C2D539A00F3E452 /* URLComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587962C2D539A00F3E452 /* URLComponent.swift */; };
+		D1E587992C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E587982C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,7 @@
 		D1E5878C2C2BFEFA00F3E452 /* NaverAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPI.swift; sourceTree = "<group>"; };
 		D1E587922C2D072E00F3E452 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		D1E587962C2D539A00F3E452 /* URLComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponent.swift; sourceTree = "<group>"; };
+		D1E587982C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 				D1E586F62C27F3A300F3E452 /* ProfileViewDelegate.swift */,
 				D1E587062C282B0500F3E452 /* SearchResultViewDelegate.swift */,
 				D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */,
+				D1E587982C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				D1E586FF2C280EAA00F3E452 /* SearchView.swift in Sources */,
 				D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */,
 				D181607B2C1AF14F004BA146 /* SceneDelegate.swift in Sources */,
+				D1E587992C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift in Sources */,
 				D18160A72C1AF5AF004BA146 /* BaseViewController.swift in Sources */,
 				D1E586F72C27F3A300F3E452 /* ProfileViewDelegate.swift in Sources */,
 				D18160AD2C1AF764004BA146 /* Extension+UIColor.swift in Sources */,

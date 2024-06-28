@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileImageViewController: BaseViewController {
     let profileImageView = ProfileImageView()
+    weak var delegate: ProfileImageViewDelegate?
+    private var selectedIndex = UserDefaultsManager.user.image
     
     override func loadView() {
         profileImageView.collectionView.delegate = self
@@ -36,12 +38,14 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as! ProfileImageCell
-        cell.configure(index: indexPath.item)
+        let isSelected = selectedIndex == indexPath.item
+        cell.configure(index: indexPath.item, isSelected: isSelected)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UserDefaultsManager.user.image = indexPath.item
+        selectedIndex = indexPath.item
+        delegate?.didSelectCell(index: indexPath.item)
         profileImageView.imageView.image = Image.Profile.allCases[indexPath.item].profileImage
         collectionView.reloadData()
     }

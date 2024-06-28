@@ -9,6 +9,7 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
     let profileView = ProfileView()
+    private var selectedIndex: Int?
     
     override func loadView() {
         view = profileView
@@ -25,7 +26,6 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        profileView.profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         profileView.nicknameTextField.text = UserDefaultsManager.user.nickname
     }
     
@@ -41,6 +41,7 @@ class ProfileViewController: BaseViewController {
             navigationItem.title = LiteralString.editProfile
             let saveButton = UIBarButtonItem(title: LiteralString.save, style: .plain, target: self, action: #selector(saveButtonTapped))
             navigationItem.rightBarButtonItem = saveButton
+            profileView.profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         }
     }
     
@@ -91,10 +92,22 @@ extension ProfileViewController: UITextFieldDelegate {
 
 extension ProfileViewController: ProfileViewDelegate {
     func didProfileImageTapped() {
-        navigationController?.pushViewController(ProfileImageViewController(), animated: true)
+        let vc = ProfileImageViewController()
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func didSave() {
+        if let index = selectedIndex {
+            UserDefaultsManager.user.image = index
+        }
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension ProfileViewController: ProfileImageViewDelegate {
+    func didSelectCell(index: Int) {
+        profileView.profileImageView.image = Image.Profile.allCases[index].profileImage
+        selectedIndex = index
     }
 }
