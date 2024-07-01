@@ -9,12 +9,12 @@ import UIKit
 import SkeletonView
 import Toast
 
-class SearchResultViewController: BaseViewController {
-    let searchResultView = SearchResultView()
+final class SearchResultViewController: BaseViewController {
+    private let searchResultView = SearchResultView()
     
     var searchText: String?
-    var page = 1
-    var list = SearchShoppingResult(lastBuildDate: "", total: 0, start: 0, display: 0, items: []) {
+    private var page = 1
+    private var list = SearchShoppingResult(lastBuildDate: "", total: 0, start: 0, display: 0, items: []) {
         didSet {
             searchResultView.totalLabel.text = list.totalString
             searchResultView.collectionView.reloadData()

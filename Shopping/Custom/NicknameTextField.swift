@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NicknameTextField: UITextField {
+final class NicknameTextField: UITextField {
     
     init() {
         super.init(frame: .zero)

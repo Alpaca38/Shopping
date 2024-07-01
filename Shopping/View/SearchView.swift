@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SearchView: BaseView {
+final class SearchView: BaseView {
     lazy var searchBar = {
         let bar = UISearchBar()
         bar.placeholder = "브랜드, 상품 등을 입력하세요."
@@ -16,7 +16,7 @@ class SearchView: BaseView {
         return bar
     }()
     
-    lazy var recentLabel = {
+    private lazy var recentLabel = {
         let label = UILabel()
         label.font = Font.boldContent
         label.text = "최근 검색"
@@ -24,7 +24,7 @@ class SearchView: BaseView {
         return label
     }()
     
-    lazy var clearButton = {
+    private lazy var clearButton = {
         let button = UIButton()
         button.setAttributedTitle(NSAttributedString(string: "전체 삭제", attributes: [.font: Font.content]), for: .normal)
         button.setTitleColor(Color.main, for: .normal)
@@ -65,7 +65,7 @@ class SearchView: BaseView {
     }
 }
 
-extension SearchView {
+private extension SearchView {
     @objc func clearButtonTapped() {
         UserDefaultsManager.searchList = []
         tableView.reloadData()

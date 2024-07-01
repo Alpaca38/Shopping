@@ -9,10 +9,10 @@ import UIKit
 import SnapKit
 import SkeletonView
 
-class SearchResultView: UIView {
+final class SearchResultView: BaseView {
     
     weak var delegate: SearchResultViewDelegate?
-    lazy var selectedButton = simButton
+    private lazy var selectedButton = simButton
     var selectButtonIndex: Int = 0
     
     lazy var totalLabel = {
@@ -31,7 +31,7 @@ class SearchResultView: UIView {
         return view
     }()
     
-    lazy var simButton = {
+    private lazy var simButton = {
         let button = FilterButton(title: Sort.sim.sortString)
         button.tag = 0
         button.backgroundColor = Color.darkGray
@@ -40,28 +40,28 @@ class SearchResultView: UIView {
         return button
     }()
     
-    lazy var dateButton = {
+    private lazy var dateButton = {
         let button = FilterButton(title: Sort.date.sortString)
         button.tag = 1
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    lazy var dscButton = {
+    private lazy var dscButton = {
         let button = FilterButton(title: Sort.dsc.sortString)
         button.tag = 2
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    lazy var ascButton = {
+    private lazy var ascButton = {
         let button = FilterButton(title: Sort.asc.sortString)
         button.tag = 3
         button.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    lazy var filterStackView = {
+    private lazy var filterStackView = {
         let view = UIStackView(arrangedSubviews: [simButton, dateButton, dscButton, ascButton])
         view.axis = .horizontal
         view.distribution = .equalSpacing
@@ -75,7 +75,7 @@ class SearchResultView: UIView {
         configureLayout()
     }
     
-    private func configureLayout() {
+    override func configureLayout() {
         totalLabel.snp.makeConstraints {
             $0.top.leading.equalTo(self.safeAreaLayoutGuide).offset(20)
         }
@@ -105,13 +105,9 @@ class SearchResultView: UIView {
         layout.sectionInset = UIEdgeInsets(top: sectionSpacing, left: sectionSpacing, bottom: sectionSpacing, right: sectionSpacing)
         return layout
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
-extension SearchResultView {
+private extension SearchResultView {
     @objc func filterButtonTapped(_ sender: FilterButton) {
         guard selectButtonIndex != sender.tag else { return }
         selectedButton.backgroundColor = Color.white

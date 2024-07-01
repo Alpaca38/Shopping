@@ -8,12 +8,12 @@
 import UIKit
 import SnapKit
 
-class SearchTableViewCell: BaseTableViewCell {
+final class SearchTableViewCell: BaseTableViewCell {
     
 //    weak var delegate: SearchTableViewCellDelegate?
     var didXmarkTapped: (() -> Void)?
     
-    lazy var clockImageView = {
+    private lazy var clockImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.tintColor = Color.black
@@ -22,14 +22,14 @@ class SearchTableViewCell: BaseTableViewCell {
         return view
     }()
     
-    lazy var contentLabel = {
+    private lazy var contentLabel = {
         let label = UILabel()
         label.font = Font.item
         self.contentView.addSubview(label)
         return label
     }()
     
-    lazy var xImageView = {
+    private lazy var xImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.tintColor = Color.black
@@ -66,7 +66,7 @@ class SearchTableViewCell: BaseTableViewCell {
     }
 }
 
-extension SearchTableViewCell {
+private extension SearchTableViewCell {
     @objc func xmarkTapped() {
         UserDefaultsManager.searchList.removeAll { $0 == contentLabel.text }
 //        delegate?.didXMarkTapped()

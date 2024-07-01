@@ -8,23 +8,23 @@
 import UIKit
 import SnapKit
 
-class SettingView: BaseView {
+final class SettingView: BaseView {
     weak var delegate: SettingViewDelegate?
     
-    lazy var profileImageView = {
+    private lazy var profileImageView = {
         let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.active)
         view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
         self.addSubview(view)
         return view
     }()
     
-    lazy var nicknameLabel = {
+    private lazy var nicknameLabel = {
         let label = UILabel()
         label.font = Font.boldTitle
         return label
     }()
     
-    lazy var dateLabel = {
+    private lazy var dateLabel = {
         let label = UILabel()
         label.font = Font.small
         label.textColor = Color.gray
@@ -32,7 +32,7 @@ class SettingView: BaseView {
         return label
     }()
     
-    lazy var labelStackView = {
+    private lazy var labelStackView = {
         let view = UIStackView(arrangedSubviews: [nicknameLabel, dateLabel])
         view.axis = .vertical
         view.alignment = .leading
@@ -41,7 +41,7 @@ class SettingView: BaseView {
         return view
     }()
     
-    lazy var nextImage = {
+    private lazy var nextImage = {
         let view = UIImageView()
         view.tintColor = Color.darkGray
         view.image = Image.next
@@ -49,7 +49,7 @@ class SettingView: BaseView {
         return view
     }()
     
-    lazy var topViewButton = {
+    private lazy var topViewButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(topViewButtonTapped), for: .touchUpInside)
         self.addSubview(button)
@@ -95,6 +95,13 @@ class SettingView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
+    }
+}
+
+extension SettingView {
+    func configureView() {
+        nicknameLabel.text = UserDefaultsManager.user.nickname
+        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
     }
 }
 

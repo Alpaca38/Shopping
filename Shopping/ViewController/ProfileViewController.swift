@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController {
-    let profileView = ProfileView()
+final class ProfileViewController: BaseViewController {
+    private let profileView = ProfileView()
     private var selectedIndex: Int?
     
     override func loadView() {
@@ -32,7 +32,9 @@ class ProfileViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
+}
+
+private extension ProfileViewController {
     func setNavi() {
         if UserDefaultsManager.user.nickname == "" {
             title = LiteralString.profileSetting
@@ -50,9 +52,7 @@ class ProfileViewController: BaseViewController {
         UserDefaultsManager.user.image = random
         profileView.profileImageView.image = Image.Profile.allCases[random].profileImage
     }
-}
-
-extension ProfileViewController {
+    
     @objc func saveButtonTapped() {
         profileView.saveButtonTapped()
     }
@@ -76,7 +76,7 @@ extension ProfileViewController: UITextFieldDelegate {
         }
     }
     
-    func validateProfileName(text: String) throws -> Bool {
+    private func validateProfileName(text: String) throws -> Bool {
         guard !text.contains(where: { LiteralString.specialCharacter.contains($0) }) else {
             throw ValidationError.includeSpecial
         }

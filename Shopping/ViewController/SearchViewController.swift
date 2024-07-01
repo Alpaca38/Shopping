@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SearchViewController: BaseViewController {
-    let emptyMainView = EmptyMainView()
-    let searchView = SearchView()
+final class SearchViewController: BaseViewController {
+    private let emptyMainView = EmptyMainView()
+    private let searchView = SearchView()
     
-    var list: [String] {
+    private var list: [String] {
         get {
             return UserDefaultsManager.searchList
         }
@@ -35,7 +35,7 @@ class SearchViewController: BaseViewController {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         if list.isEmpty {
             if view != emptyMainView {
                 emptyMainView.searchBar.delegate = self

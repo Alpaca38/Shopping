@@ -7,8 +7,8 @@
 
 import UIKit
 
-class OnBoardingViewController: BaseViewController {
-    let onBoardingView = OnBoardingView()
+final class OnBoardingViewController: BaseViewController {
+    private let onBoardingView = OnBoardingView()
     
     override func loadView() {
         view = onBoardingView

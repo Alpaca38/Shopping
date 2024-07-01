@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-class CustomButton: UIButton {
+final class CustomButton: UIButton {
     
     init(title: String) {
         super.init(frame: .zero)

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SettingViewController: BaseViewController {
-    let settingView = SettingView()
+final class SettingViewController: BaseViewController {
+    private let settingView = SettingView()
     
     override func loadView() {
         settingView.tableView.dataSource = self
@@ -23,8 +23,7 @@ class SettingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        settingView.nicknameLabel.text = UserDefaultsManager.user.nickname
-        settingView.profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+        settingView.configureView()
         settingView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
     }
 }

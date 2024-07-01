@@ -9,12 +9,12 @@ import UIKit
 import WebKit
 import SnapKit
 
-class DetailViewController: BaseViewController {
+final class DetailViewController: BaseViewController {
     
     var titleText: String?
     var data: SearchItem?
     
-    lazy var webView = {
+    private lazy var webView = {
         let view = WKWebView()
         guard let data, let url = URL(string: data.link) else { return view }
         view.load(URLRequest(url: url))
@@ -27,7 +27,9 @@ class DetailViewController: BaseViewController {
         setNavigationItem()
         configureLayout()
     }
-    
+}
+
+private extension DetailViewController {
     func configureLayout() {
         webView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
@@ -47,9 +49,7 @@ class DetailViewController: BaseViewController {
         let likeButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(likeButtonTapped))
         navigationItem.rightBarButtonItem = likeButton
     }
-}
-
-private extension DetailViewController {
+    
     @objc func likeButtonTapped() {
         guard let data else { return }
         if UserDefaultsManager.likeList.contains(data.productId) {

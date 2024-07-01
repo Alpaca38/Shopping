@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 import Toast
 
-class OnBoardingView: BaseView {
+final class OnBoardingView: BaseView {
     
     weak var delegate: OnBoardingViewDelegate?
     
-    lazy var titleLabel = {
+    private lazy var titleLabel = {
         let label = UILabel()
         label.text = LiteralString.appName
         label.font = Font.futuraBold
@@ -23,7 +23,7 @@ class OnBoardingView: BaseView {
         return label
     }()
     
-    lazy var imageView = {
+    private lazy var imageView = {
         let view = UIImageView()
         view.image = Image.launch
         view.contentMode = .scaleAspectFill
@@ -31,7 +31,7 @@ class OnBoardingView: BaseView {
         return view
     }()
     
-    lazy var startButton = {
+    private lazy var startButton = {
         let button = CustomButton(title: "시작하기")
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         self.addSubview(button)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneManager {
+final class SceneManager {
     private init() { }
     
     static let shared = SceneManager()

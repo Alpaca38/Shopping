@@ -8,9 +8,8 @@
 import UIKit
 import SnapKit
 
-class ProfileImageCell: BaseCollectionViewCell {
-    
-    lazy var profileImageView = {
+final class ProfileImageCell: BaseCollectionViewCell {
+    private lazy var profileImageView = {
         let view = CircleImageView(borderWidth: Image.Border.inActive, borderColor: Color.lightGray, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.inActive)
         self.contentView.addSubview(view)
         return view

@@ -8,22 +8,22 @@
 import UIKit
 import SnapKit
 
-class SettingTableViewCell: BaseTableViewCell {
-    lazy var titleLabel = {
+final class SettingTableViewCell: BaseTableViewCell {
+    private lazy var titleLabel = {
         let label = UILabel()
         label.font = Font.content
         self.contentView.addSubview(label)
         return label
     }()
     
-    lazy var subTitleLabel = {
+    private lazy var subTitleLabel = {
         let label = UILabel()
         label.font = Font.content
         self.contentView.addSubview(label)
         return label
     }()
     
-    lazy var likeImage = {
+    private lazy var likeImage = {
         let view = UIImageView()
         self.contentView.addSubview(view)
         return view

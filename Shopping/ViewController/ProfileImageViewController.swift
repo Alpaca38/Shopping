@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ProfileImageViewController: BaseViewController {
-    let profileImageView = ProfileImageView()
+final class ProfileImageViewController: BaseViewController {
+    private let profileImageView = ProfileImageView()
     weak var delegate: ProfileImageViewDelegate?
     private var selectedIndex = UserDefaultsManager.user.image
     

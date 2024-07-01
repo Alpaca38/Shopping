@@ -10,11 +10,11 @@ import SnapKit
 import Kingfisher
 import SkeletonView
 
-class SearchResultCollectionViewCell: BaseCollectionViewCell {
+final class SearchResultCollectionViewCell: BaseCollectionViewCell {
     
     var delegate: SearchResultCollectionViewCellDelegate?
     
-    lazy var imageView = {
+    private lazy var imageView = {
         let view = UIImageView()
         view.isSkeletonable = true
         view.contentMode = .scaleAspectFill
@@ -24,7 +24,7 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
         return view
     }()
     
-    lazy var mallLabel = {
+    private lazy var mallLabel = {
         let view = UILabel()
         view.isSkeletonable = true
         view.font = Font.small
@@ -33,7 +33,7 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
         return view
     }()
     
-    lazy var titleLabel = {
+    private lazy var titleLabel = {
         let label = UILabel()
         label.isSkeletonable = true
         label.font = Font.item
@@ -42,7 +42,7 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
-    lazy var priceLabel = {
+    private lazy var priceLabel = {
         let label = UILabel()
         label.isSkeletonable = true
         label.font = Font.boldTitle
@@ -50,7 +50,7 @@ class SearchResultCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
-    lazy var likeButton = {
+    private lazy var likeButton = {
         let button = UIButton()
         button.isSkeletonable = true
         button.contentMode = .scaleAspectFit

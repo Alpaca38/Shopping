@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterButton: UIButton {
+final class FilterButton: UIButton {
     
     init(title: String) {
         super.init(frame: .zero)

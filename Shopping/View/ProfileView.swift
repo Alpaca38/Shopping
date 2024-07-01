@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Toast
 
-class ProfileView: BaseView {
+final class ProfileView: BaseView {
     
     weak var delegate: ProfileViewDelegate?
     
@@ -24,7 +24,7 @@ class ProfileView: BaseView {
         return view
     }()
     
-    lazy var cameraImageView = {
+    private lazy var cameraImageView = {
         let view = UIImageView()
         view.backgroundColor = Color.main
         view.tintColor = Color.white
@@ -49,7 +49,7 @@ class ProfileView: BaseView {
         return label
     }()
     
-    lazy var completeButton = {
+    private lazy var completeButton = {
         let button = CustomButton(title: "완료")
         button.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
         
@@ -90,7 +90,7 @@ class ProfileView: BaseView {
 }
 
 
-extension ProfileView {
+private extension ProfileView {
     @objc func completeButtonTapped() {
         if textFieldStateLabel.text == TextFieldState.valid {
             guard let nickname = nickname else { return }
@@ -105,7 +105,9 @@ extension ProfileView {
     @objc func profileImageTapped() {
         delegate?.didProfileImageTapped()
     }
-    
+}
+
+extension ProfileView {
     func saveButtonTapped() {
         if textFieldStateLabel.text == TextFieldState.valid || nicknameTextField.text == UserDefaultsManager.user.nickname {
             UserDefaultsManager.user.nickname = nicknameTextField.text!

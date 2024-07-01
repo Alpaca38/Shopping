@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class EmptyMainView: BaseView {
+final class EmptyMainView: BaseView {
     lazy var searchBar = {
         let bar = UISearchBar()
         bar.placeholder = "브랜드, 상품 등을 입력하세요."
@@ -16,7 +16,7 @@ class EmptyMainView: BaseView {
         return bar
     }()
     
-    lazy var imageView = {
+    private lazy var imageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.image = Image.empty
@@ -24,7 +24,7 @@ class EmptyMainView: BaseView {
         return view
     }()
     
-    lazy var emptyLabel = {
+    private lazy var emptyLabel = {
         let label = UILabel()
         label.font = Font.boldTitle
         label.textAlignment = .center
