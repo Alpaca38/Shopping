@@ -9,6 +9,7 @@ import UIKit
 
 enum Image {
     static let search = UIImage(systemName: "magnifyingglass")
+    static let like = UIImage(systemName: "hand.thumbsup")
     static let clock = UIImage(systemName: "clock")
     static let setting = UIImage(systemName: "person")
     static let xmark = UIImage(systemName: "xmark")

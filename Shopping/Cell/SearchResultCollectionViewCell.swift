@@ -94,7 +94,7 @@ final class SearchResultCollectionViewCell: BaseCollectionViewCell {
         
     }
     
-    func configure(data: SearchItem) {
+    func configure(data: SearchItemProtocol) {
         let url = URL(string: data.image)
         let processor = DownsamplingImageProcessor(size: imageView.bounds.size)
         imageView.kf.setImage(

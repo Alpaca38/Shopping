@@ -17,10 +17,13 @@ final class TabBarController: UITabBarController {
         let main = UINavigationController(rootViewController: SearchViewController())
         main.tabBarItem = UITabBarItem(title: LiteralString.search, image: Image.search, tag: 0)
         
-        let setting = UINavigationController(rootViewController: SettingViewController())
-        setting.tabBarItem = UITabBarItem(title: LiteralString.settingItem, image: Image.setting, tag: 1)
+        let like = UINavigationController(rootViewController: LikeViewController())
+        like.tabBarItem = UITabBarItem(title: LiteralString.like, image: Image.like, tag: 1)
         
-        setViewControllers([main, setting], animated: true)
+        let setting = UINavigationController(rootViewController: SettingViewController())
+        setting.tabBarItem = UITabBarItem(title: LiteralString.settingItem, image: Image.setting, tag: 2)
+        
+        setViewControllers([main, like, setting], animated: true)
         
     }
     

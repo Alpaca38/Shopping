@@ -10,6 +10,7 @@ import SkeletonView
 import Toast
 
 final class SearchResultViewController: BaseViewController {
+    private let repository = SearchItemRepository()
     private let searchResultView = SearchResultView()
     
     var searchText: String?
@@ -125,10 +126,13 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
     func didLikeButtonTapped(cell: UICollectionViewCell) {
         if let indexPath = searchResultView.collectionView.indexPath(for: cell) {
             let productId = list.items[indexPath.item].productId
+            let data = list.items[indexPath.item]
             if UserDefaultsManager.likeList.contains(productId) {
                 UserDefaultsManager.likeList.remove(productId)
+                repository.deleteItem(data: data.toDTO())
             } else {
                 UserDefaultsManager.likeList.insert(productId)
+                repository.createItem(data: data.toDTO())
             }
             searchResultView.collectionView.reloadItems(at: [indexPath])
         }

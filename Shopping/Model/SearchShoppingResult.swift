@@ -17,7 +17,7 @@ struct SearchShoppingResult: Decodable {
     }
 }
 
-struct SearchItem: Decodable {
+struct SearchItem: Decodable, SearchItemProtocol {
     let title: String
     let link: String
     let image: String
@@ -29,4 +29,15 @@ struct SearchItem: Decodable {
         let formattedPrice = Int(lprice)!.formatted()
         return formattedPrice + "원"
     }
+    
+    func toDTO() -> SearchItemDTO {
+            let dto = SearchItemDTO()
+            dto.title = self.title
+            dto.link = self.link
+            dto.image = self.image
+            dto.mallName = self.mallName
+            dto.productId = self.productId
+            dto.lprice = self.lprice
+            return dto
+        }
 }
