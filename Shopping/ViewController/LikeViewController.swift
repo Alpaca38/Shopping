@@ -36,7 +36,11 @@ final class LikeViewController: BaseViewController {
 }
 
 extension LikeViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let filter = repository.fetchSearchItem(searchText)
+        let result = searchText.isEmpty ? repository.fetchAll() : filter
+        list = result
+    }
 }
 
 extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSource {

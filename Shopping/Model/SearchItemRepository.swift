@@ -32,6 +32,13 @@ final class SearchItemRepository {
         }.first
     }
     
+    func fetchSearchItem(_ searchText: String) -> [SearchItemDTO] {
+        let results = realm.objects(SearchItemDTO.self).where {
+            $0.title.contains(searchText, options: .caseInsensitive)
+        }
+        return Array(results)
+    }
+    
     func deleteItem(data: SearchItemDTO) {
         do {
             try realm.write {
