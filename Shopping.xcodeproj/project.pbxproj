@@ -12,6 +12,7 @@
 		D10DA9862C380654001F25FF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9852C380654001F25FF /* RealmModel.swift */; };
 		D10DA9882C38082D001F25FF /* SearchItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9872C38082D001F25FF /* SearchItemRepository.swift */; };
 		D10DA98A2C3809BB001F25FF /* SearchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9892C3809BB001F25FF /* SearchItemProtocol.swift */; };
+		D10DA98C2C38F6F5001F25FF /* DatabaseChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA98B2C38F6F5001F25FF /* DatabaseChangeDelegate.swift */; };
 		D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7BB2C216FB300D2E535 /* ValidationError.swift */; };
 		D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7CE2C24143600D2E535 /* NetworkManager.swift */; };
 		D11DA7D12C24211900D2E535 /* ShoppingQueryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */; };
@@ -104,6 +105,7 @@
 		D10DA9852C380654001F25FF /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		D10DA9872C38082D001F25FF /* SearchItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemRepository.swift; sourceTree = "<group>"; };
 		D10DA9892C3809BB001F25FF /* SearchItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemProtocol.swift; sourceTree = "<group>"; };
+		D10DA98B2C38F6F5001F25FF /* DatabaseChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChangeDelegate.swift; sourceTree = "<group>"; };
 		D11DA7BB2C216FB300D2E535 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		D11DA7CE2C24143600D2E535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingQueryError.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				D1E5870A2C28300D00F3E452 /* SettingViewDelegate.swift */,
 				D1E587982C2E4C2A00F3E452 /* ProfileImageViewDelegate.swift */,
 				D10DA9892C3809BB001F25FF /* SearchItemProtocol.swift */,
+				D10DA98B2C38F6F5001F25FF /* DatabaseChangeDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */,
 				D18160B82C1B0161004BA146 /* UserDefaultsManager.swift in Sources */,
 				D18160AA2C1AF69E004BA146 /* Color.swift in Sources */,
+				D10DA98C2C38F6F5001F25FF /* DatabaseChangeDelegate.swift in Sources */,
 				D18160D22C1BCD0D004BA146 /* ReuseIdentifier.swift in Sources */,
 				D1E587322C290C8F00F3E452 /* Extension+UIViewController.swift in Sources */,
 				D10DA9882C38082D001F25FF /* SearchItemRepository.swift in Sources */,

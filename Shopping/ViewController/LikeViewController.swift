@@ -28,6 +28,11 @@ final class LikeViewController: BaseViewController {
         list = repository.fetchAll()
         repository.printRealmURL()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        list = repository.fetchAll()
+    }
 }
 
 extension LikeViewController: UISearchBarDelegate {
