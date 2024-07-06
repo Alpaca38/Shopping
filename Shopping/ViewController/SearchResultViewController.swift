@@ -89,7 +89,6 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let data = list.items[indexPath.item]
         let vc = DetailViewController()
-        vc.titleText = searchText
         vc.data = data
         navigationController?.pushViewController(vc, animated: true)
     }

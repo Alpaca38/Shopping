@@ -10,14 +10,18 @@ import WebKit
 import SnapKit
 
 final class DetailViewController: BaseViewController {
-    
-    var titleText: String?
+    private let repository = SearchItemRepository()
     var data: SearchItem?
-    
+    var dataDTO: SearchItemDTO?
+    private var image: UIImage?
+    private lazy var likeButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(likeButtonTapped))
     private lazy var webView = {
         let view = WKWebView()
-        guard let data, let url = URL(string: data.link) else { return view }
-        view.load(URLRequest(url: url))
+        if let data, let url = URL(string: data.link) {
+            view.load(URLRequest(url: url))
+        } else if let dataDTO, let url = URL(string: dataDTO.link){
+            view.load(URLRequest(url: url))
+        }
         self.view.addSubview(view)
         return view
     }()
@@ -37,26 +41,47 @@ private extension DetailViewController {
     }
     
     func setNavigationItem() {
-        navigationItem.title = data?.title.asAttributedString().map { $0.string }
-        
-        guard let data else { return }
-        var image: UIImage?
-        if UserDefaultsManager.likeList.contains(data.productId) {
+        if let data {
+            navigationItem.title = data.title.asAttributedString().map { $0.string }
+            updateLikeButton(for: data.productId)
+        } else if let dataDTO {
+            navigationItem.title = dataDTO.title.asAttributedString().map { $0.string }
+            updateLikeButton(for: dataDTO.productId)
+        }
+    }
+    
+    func updateLikeButton(for productId: String) {
+        if UserDefaultsManager.likeList.contains(productId) {
             image = Image.likeSelected
         } else {
             image = Image.likeUnSelected?.withRenderingMode(.alwaysOriginal)
         }
-        let likeButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(likeButtonTapped))
         navigationItem.rightBarButtonItem = likeButton
     }
     
     @objc func likeButtonTapped() {
-        guard let data else { return }
-        if UserDefaultsManager.likeList.contains(data.productId) {
-            UserDefaultsManager.likeList.remove(data.productId)
-        } else {
-            UserDefaultsManager.likeList.insert(data.productId)
+        if let data {
+            if UserDefaultsManager.likeList.contains(data.productId) {
+                UserDefaultsManager.likeList.remove(data.productId)
+                if let object = repository.fetchItemFromProduct(productID: data.productId) {
+                    repository.deleteItem(data: object)
+                }
+                likeButton.image = Image.likeUnSelected?.withRenderingMode(.alwaysOriginal)
+            } else {
+                UserDefaultsManager.likeList.insert(data.productId)
+                repository.createItem(data: SearchItemDTO(from: data))
+                likeButton.image = Image.likeSelected
+            }
+        } else if let dataDTO {
+            if UserDefaultsManager.likeList.contains(dataDTO.productId) {
+                UserDefaultsManager.likeList.remove(dataDTO.productId)
+                repository.deleteItem(data: dataDTO)
+                likeButton.image = Image.likeUnSelected?.withRenderingMode(.alwaysOriginal)
+            } else {
+                UserDefaultsManager.likeList.insert(dataDTO.productId)
+                repository.createItem(data: dataDTO)
+                likeButton.image = Image.likeSelected
+            }
         }
-        setNavigationItem()
     }
 }

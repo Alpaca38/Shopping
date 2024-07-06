@@ -50,4 +50,11 @@ extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(data: data)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = list[indexPath.row]
+        let vc = DetailViewController()
+        vc.dataDTO = data
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
