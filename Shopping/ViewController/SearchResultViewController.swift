@@ -125,14 +125,16 @@ extension SearchResultViewController: SkeletonCollectionViewDataSource {
 extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
     func didLikeButtonTapped(cell: UICollectionViewCell) {
         if let indexPath = searchResultView.collectionView.indexPath(for: cell) {
-            let productId = list.items[indexPath.item].productId
-            let data = list.items[indexPath.item]
-            if UserDefaultsManager.likeList.contains(productId) {
-                UserDefaultsManager.likeList.remove(productId)
-                repository.deleteItem(data: data.toDTO())
+            let searchItem = list.items[indexPath.item]
+            let dto = SearchItemDTO(from: searchItem)
+            if UserDefaultsManager.likeList.contains(searchItem.productId) {
+                UserDefaultsManager.likeList.remove(searchItem.productId)
+                if let data = repository.fetchItemFromProduct(productID: searchItem.productId) {
+                    repository.deleteItem(data: data)
+                }
             } else {
-                UserDefaultsManager.likeList.insert(productId)
-                repository.createItem(data: data.toDTO())
+                UserDefaultsManager.likeList.insert(searchItem.productId)
+                repository.createItem(data: dto)
             }
             searchResultView.collectionView.reloadItems(at: [indexPath])
         }

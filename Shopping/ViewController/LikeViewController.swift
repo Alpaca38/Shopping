@@ -26,6 +26,7 @@ final class LikeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         list = repository.fetchAll()
+        repository.printRealmURL()
     }
 }
 

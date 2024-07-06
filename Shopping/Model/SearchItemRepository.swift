@@ -26,6 +26,12 @@ final class SearchItemRepository {
         return Array(results)
     }
     
+    func fetchItemFromProduct(productID: String) -> SearchItemDTO? {
+        return realm.objects(SearchItemDTO.self).where {
+            $0.productId == productID
+        }.first
+    }
+    
     func deleteItem(data: SearchItemDTO) {
         do {
             try realm.write {
@@ -34,5 +40,9 @@ final class SearchItemRepository {
         } catch {
             print("DeleteItem Error")
         }
+    }
+    
+    func printRealmURL() {
+        print(realm.configuration.fileURL!)
     }
 }

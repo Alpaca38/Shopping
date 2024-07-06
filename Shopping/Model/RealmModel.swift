@@ -31,4 +31,14 @@ final class SearchItemDTO: Object, SearchItemProtocol {
         self.productId = productId
         self.lprice = lprice
     }
+    
+    convenience init(from searchItem: SearchItem) {
+            self.init()
+            self.title = searchItem.title
+            self.link = searchItem.link
+            self.image = searchItem.image
+            self.mallName = searchItem.mallName
+            self.productId = searchItem.productId
+            self.lprice = searchItem.lprice
+        }
 }
