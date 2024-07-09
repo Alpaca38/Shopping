@@ -13,6 +13,8 @@
 		D10DA9882C38082D001F25FF /* SearchItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9872C38082D001F25FF /* SearchItemRepository.swift */; };
 		D10DA98A2C3809BB001F25FF /* SearchItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9892C3809BB001F25FF /* SearchItemProtocol.swift */; };
 		D10DA98C2C38F6F5001F25FF /* DatabaseChangeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA98B2C38F6F5001F25FF /* DatabaseChangeDelegate.swift */; };
+		D10DA9B22C3D1D5D001F25FF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9B12C3D1D5D001F25FF /* Observable.swift */; };
+		D10DA9B52C3D1F72001F25FF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DA9B42C3D1F72001F25FF /* ProfileViewModel.swift */; };
 		D11DA7BC2C216FB300D2E535 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7BB2C216FB300D2E535 /* ValidationError.swift */; };
 		D11DA7CF2C24143600D2E535 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7CE2C24143600D2E535 /* NetworkManager.swift */; };
 		D11DA7D12C24211900D2E535 /* ShoppingQueryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */; };
@@ -106,6 +108,8 @@
 		D10DA9872C38082D001F25FF /* SearchItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemRepository.swift; sourceTree = "<group>"; };
 		D10DA9892C3809BB001F25FF /* SearchItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemProtocol.swift; sourceTree = "<group>"; };
 		D10DA98B2C38F6F5001F25FF /* DatabaseChangeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseChangeDelegate.swift; sourceTree = "<group>"; };
+		D10DA9B12C3D1D5D001F25FF /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D10DA9B42C3D1F72001F25FF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		D11DA7BB2C216FB300D2E535 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		D11DA7CE2C24143600D2E535 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D11DA7D02C24211900D2E535 /* ShoppingQueryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingQueryError.swift; sourceTree = "<group>"; };
@@ -194,6 +198,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10DA9B02C3D1D55001F25FF /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				D10DA9B12C3D1D5D001F25FF /* Observable.swift */,
+			);
+			path = Observable;
+			sourceTree = "<group>";
+		};
+		D10DA9B32C3D1F63001F25FF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D10DA9B42C3D1F72001F25FF /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D181606C2C1AF14F004BA146 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +234,8 @@
 		D18160772C1AF14F004BA146 /* Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				D10DA9B32C3D1F63001F25FF /* ViewModel */,
+				D10DA9B02C3D1D55001F25FF /* Observable */,
 				D1E5878B2C2BFEDC00F3E452 /* Network */,
 				D1E587792C2B04D100F3E452 /* Base */,
 				D1E586EF2C27EE0200F3E452 /* View */,
@@ -502,8 +524,10 @@
 				D1E587972C2D539A00F3E452 /* URLComponent.swift in Sources */,
 				D18160792C1AF14F004BA146 /* AppDelegate.swift in Sources */,
 				D18160C82C1B27BB004BA146 /* CustomButton.swift in Sources */,
+				D10DA9B22C3D1D5D001F25FF /* Observable.swift in Sources */,
 				D18160F02C1C62F0004BA146 /* SettingViewController.swift in Sources */,
 				D10DA9862C380654001F25FF /* RealmModel.swift in Sources */,
+				D10DA9B52C3D1F72001F25FF /* ProfileViewModel.swift in Sources */,
 				D1E587932C2D072E00F3E452 /* APIError.swift in Sources */,
 				D1E586FD2C280DBF00F3E452 /* EmptyMainView.swift in Sources */,
 				D18160EA2C1C3CA0004BA146 /* Extension+String.swift in Sources */,

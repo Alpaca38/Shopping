@@ -9,6 +9,7 @@ import UIKit
 
 final class ProfileViewController: BaseViewController {
     private let profileView = ProfileView()
+    private let viewModel = ProfileViewModel()
     private var selectedIndex: Int?
     
     override func loadView() {
@@ -22,6 +23,7 @@ final class ProfileViewController: BaseViewController {
         profileView.nicknameTextField.addTarget(self, action: #selector(textFieldDidChage(_ :)), for: .editingChanged)
         
         setNavi()
+        bindData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,37 +58,23 @@ private extension ProfileViewController {
     @objc func saveButtonTapped() {
         profileView.saveButtonTapped()
     }
+    
+    func bindData() {
+        viewModel.outputValidText.bind { [weak self] in
+            guard let self else { return }
+            profileView.textFieldStateLabel.text = $0
+        }
+        
+        viewModel.outputNickname.bind { [weak self] in
+            guard let self else { return }
+            profileView.nickname = $0
+        }
+    }
 }
 
 extension ProfileViewController: UITextFieldDelegate {
     @objc func textFieldDidChage(_ textField: UITextField) {
-        guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-        do {
-            _ = try validateProfileName(text: text)
-            profileView.textFieldStateLabel.text = TextFieldState.valid
-            profileView.nickname = text
-        } catch ValidationError.includeSpecial {
-            profileView.textFieldStateLabel.text = TextFieldState.specialCharacter
-        } catch ValidationError.includeInt {
-            profileView.textFieldStateLabel.text = TextFieldState.number
-        } catch ValidationError.isNotValidCount {
-            profileView.textFieldStateLabel.text = TextFieldState.count
-        } catch {
-            
-        }
-    }
-    
-    private func validateProfileName(text: String) throws -> Bool {
-        guard !text.contains(where: { LiteralString.specialCharacter.contains($0) }) else {
-            throw ValidationError.includeSpecial
-        }
-        guard text.rangeOfCharacter(from: .decimalDigits) == nil else {
-            throw ValidationError.includeInt
-        }
-        guard text.count >= 2 && text.count < 10 else {
-            throw ValidationError.isNotValidCount
-        }
-        return true
+        viewModel.inputText.value = textField.text
     }
 }
 
