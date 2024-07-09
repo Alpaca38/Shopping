@@ -69,6 +69,12 @@ private extension ProfileViewController {
             guard let self else { return }
             profileView.nickname = $0
         }
+        
+        viewModel.outputValid.bind { [weak self] in
+            guard let self else { return }
+            profileView.completeButton.backgroundColor = $0 ? Color.main : .gray
+            profileView.completeButton.isEnabled = $0
+        }
     }
 }
 

@@ -49,13 +49,22 @@ final class ProfileView: BaseView {
         return label
     }()
     
-    private lazy var completeButton = {
+    lazy var completeButton = {
         let button = CustomButton(title: "완료")
         button.addTarget(self, action: #selector(completeButtonTapped), for: .touchUpInside)
         
         self.addSubview(button)
         return button
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        if UserDefaultsManager.isLogin {
+            completeButton.isHidden = true
+        } else {
+            completeButton.isHidden = false
+        }
+    }
     
     override func configureLayout() {
         profileImageView.snp.makeConstraints {
@@ -80,11 +89,15 @@ final class ProfileView: BaseView {
             $0.leading.equalToSuperview().offset(28)
         }
         
-        if UserDefaultsManager.isLogin == false {
-            completeButton.snp.makeConstraints {
-                $0.top.equalTo(textFieldStateLabel.snp.bottom).offset(20)
-                $0.horizontalEdges.equalToSuperview().inset(20)
-            }
+//        if UserDefaultsManager.isLogin == false {
+//            completeButton.snp.makeConstraints {
+//                $0.top.equalTo(textFieldStateLabel.snp.bottom).offset(20)
+//                $0.horizontalEdges.equalToSuperview().inset(20)
+//            }
+//        }
+        completeButton.snp.makeConstraints {
+            $0.top.equalTo(textFieldStateLabel.snp.bottom).offset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
     }
 }
