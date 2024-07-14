@@ -10,11 +10,12 @@ import UIKit
 final class LikeViewController: BaseViewController {
     private let likeView = LikeView()
     private let repository = SearchItemRepository()
-    private var list: [SearchItemDTO] = [] {
-        didSet {
-            likeView.collectionView.reloadData()
-        }
-    }
+    private let viewModel = LikeViewModel()
+//    private var list: [SearchItemDTO] = [] {
+//        didSet {
+//            likeView.collectionView.reloadData()
+//        }
+//    }
     
     override func loadView() {
         likeView.searchBar.delegate = self
@@ -25,38 +26,44 @@ final class LikeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        list = repository.fetchAll()
         repository.printRealmURL()
+        bindData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        list = repository.fetchAll()
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        viewModel.outputList.value = repository.fetchAll()
+//    }
+}
+
+private extension LikeViewController {
+    func bindData() {
+        viewModel.outputList.bind { [weak self] _ in
+            self?.likeView.collectionView.reloadData()
+        }
     }
 }
 
 extension LikeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let filter = repository.fetchSearchItem(searchText)
-        let result = searchText.isEmpty ? repository.fetchAll() : filter
-        list = result
+        viewModel.inputSearchText.value = searchText
     }
 }
 
 extension LikeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
+        return viewModel.outputList.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
-        let data = list[indexPath.item]
+        let data = viewModel.outputList.value[indexPath.item]
         cell.configure(data: data)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = list[indexPath.row]
+        let data = viewModel.outputList.value[indexPath.row]
         let vc = DetailViewController()
         vc.dataDTO = data
         navigationController?.pushViewController(vc, animated: true)
