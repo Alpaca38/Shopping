@@ -10,16 +10,8 @@ import UIKit
 final class SearchViewController: BaseViewController {
     private let emptyMainView = EmptyMainView()
     private let searchView = SearchView()
+    private let viewModel = SearchViewModel()
     
-    private var list: [String] {
-        get {
-            return UserDefaultsManager.searchList
-        }
-        set {
-            UserDefaultsManager.searchList = newValue
-            searchView.tableView.reloadData()
-        }
-    }
     override func loadView() {
         super.loadView()
         setupView()
@@ -27,16 +19,16 @@ final class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.title = UserDefaultsManager.user.mainNaviTitle
-        setupView()
     }
     
     private func setupView() {
-        if list.isEmpty {
+        if viewModel.outputList.value.isEmpty {
             if view != emptyMainView {
                 emptyMainView.searchBar.delegate = self
                 view = emptyMainView
@@ -46,6 +38,10 @@ final class SearchViewController: BaseViewController {
                 searchView.searchBar.delegate = self
                 searchView.tableView.delegate = self
                 searchView.tableView.dataSource = self
+                searchView.didClearButtonTapped = {
+                    UserDefaultsManager.searchList = []
+                    self.viewModel.outputList.value = UserDefaultsManager.searchList
+                }
                 view = searchView
             }
         }
@@ -53,10 +49,21 @@ final class SearchViewController: BaseViewController {
     }
 }
 
+private extension SearchViewController {
+    func bindData() {
+        viewModel.outputList.bind { [weak self] list in
+            guard let self else { return }
+            UserDefaultsManager.searchList = list
+            setupView()
+            searchView.tableView.reloadData()
+        }
+    }
+}
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if list.contains(searchBar.text!) == false {
-            list.insert(searchBar.text!, at: 0)
+        if viewModel.outputList.value.contains(searchBar.text!) == false {
+            viewModel.outputList.value.insert(searchBar.text!, at: 0)
         }
         let vc = SearchResultViewController()
         vc.searchText = searchBar.text!
@@ -67,7 +74,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        list.count
+        return viewModel.outputList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,21 +82,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(index: indexPath.row)
         cell.didXmarkTapped = { [weak self] in
             guard let self else { return }
-            searchView.tableView.reloadData()
+            viewModel.outputList.value = UserDefaultsManager.searchList
         }
-//        cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SearchResultViewController()
-        vc.searchText = list[indexPath.row]
+        vc.searchText = viewModel.outputList.value[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-//extension SearchViewController: SearchTableViewCellDelegate {
-//    func didXMarkTapped() {
-//        searchView.tableView.reloadData()
-//    }
-//}

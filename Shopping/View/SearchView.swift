@@ -41,6 +41,8 @@ final class SearchView: BaseView {
         return view
     }()
     
+    var didClearButtonTapped: (() -> Void)?
+    
     override func configureLayout() {
         searchBar.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
@@ -67,7 +69,6 @@ final class SearchView: BaseView {
 
 private extension SearchView {
     @objc func clearButtonTapped() {
-        UserDefaultsManager.searchList = []
-        tableView.reloadData()
+        didClearButtonTapped?()
     }
 }
