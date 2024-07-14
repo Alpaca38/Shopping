@@ -11,7 +11,7 @@ import SnapKit
 final class ProfileImageView: BaseView {
     lazy var imageView = {
         let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.bigProfile / 2, alpha: Image.Alpha.active)
-        view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+        view.image = UIImage(named: Image.Profile.allCases[UserDefaultsManager.user.image].profileImage) 
         self.addSubview(view)
         return view
     }()

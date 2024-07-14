@@ -23,32 +23,32 @@ enum Image {
     enum Profile: Int, CaseIterable {
         case one, two, three, four, five, six, seven, eight, nine, ten, eleven, tweleve
         
-        var profileImage: UIImage? {
+        var profileImage: String {
             switch self {
             case .one:
-                return UIImage(named: "profile_0")
+                return "profile_0"
             case .two:
-                return UIImage(named: "profile_1")
+                return "profile_1"
             case .three:
-                return UIImage(named: "profile_2")
+                return "profile_2"
             case .four:
-                return UIImage(named: "profile_3")
+                return "profile_3"
             case .five:
-                return UIImage(named: "profile_4")
+                return "profile_4"
             case .six:
-                return UIImage(named: "profile_5")
+                return "profile_5"
             case .seven:
-                return UIImage(named: "profile_6")
+                return "profile_6"
             case .eight:
-                return UIImage(named: "profile_7")
+                return "profile_7"
             case .nine:
-                return UIImage(named: "profile_8")
+                return "profile_8"
             case .ten:
-                return UIImage(named: "profile_9")
+                return "profile_9"
             case .eleven:
-                return UIImage(named: "profile_10")
+                return "profile_10"
             case .tweleve:
-                return UIImage(named: "profile_11")
+                return "profile_11"
             }
         }
     }

@@ -13,7 +13,7 @@ final class SettingView: BaseView {
     
     private lazy var profileImageView = {
         let view = CircleImageView(borderWidth: Image.Border.active, borderColor: Color.main, cornerRadius: Image.Size.smallProfile / 2, alpha: Image.Alpha.active)
-        view.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+        view.image = UIImage(named: Image.Profile.allCases[UserDefaultsManager.user.image].profileImage)
         self.addSubview(view)
         return view
     }()
@@ -101,7 +101,7 @@ final class SettingView: BaseView {
 extension SettingView {
     func configureView() {
         nicknameLabel.text = UserDefaultsManager.user.nickname
-        profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+        profileImageView.image = UIImage(named: Image.Profile.allCases[UserDefaultsManager.user.image].profileImage)
     }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 final class ProfileImageViewController: BaseViewController {
     private let profileImageView = ProfileImageView()
     weak var delegate: ProfileImageViewDelegate?
-    private var selectedIndex = UserDefaultsManager.user.image
+    private let viewModel = ProfileImageViewModel()
     
     override func loadView() {
         profileImageView.collectionView.delegate = self
@@ -20,15 +20,22 @@ final class ProfileImageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if UserDefaultsManager.isLogin {
             title = LiteralString.editProfile
         } else {
             title = LiteralString.profileSetting
         }
         
+        bindData()
     }
-   
+}
+
+private extension ProfileImageViewController {
+    func bindData() {
+        viewModel.outputImage.bind { [weak self] _ in
+            self?.profileImageView.collectionView.reloadData()
+        }
+    }
 }
 
 extension ProfileImageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -38,15 +45,15 @@ extension ProfileImageViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileImageCell.identifier, for: indexPath) as! ProfileImageCell
-        let isSelected = selectedIndex == indexPath.item
+        let isSelected = viewModel.inputSelectedIndex.value == indexPath.item
         cell.configure(index: indexPath.item, isSelected: isSelected)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndex = indexPath.item
+        viewModel.inputSelectedIndex.value = indexPath.item
         delegate?.didSelectCell(index: indexPath.item)
-        profileImageView.imageView.image = Image.Profile.allCases[indexPath.item].profileImage
-        collectionView.reloadData()
+        guard let output = viewModel.outputImage.value else { return }
+        profileImageView.imageView.image = UIImage(named: output)
     }
 }

@@ -22,7 +22,7 @@ final class ProfileImageCell: BaseCollectionViewCell {
     }
     
     func configure(index: Int, isSelected: Bool) {
-        profileImageView.image = Image.Profile.allCases[index].profileImage
+        profileImageView.image = UIImage(named: Image.Profile.allCases[index].profileImage)
         if isSelected {
             profileImageView.layer.borderWidth = Image.Border.active
             profileImageView.layer.borderColor = Color.main.cgColor

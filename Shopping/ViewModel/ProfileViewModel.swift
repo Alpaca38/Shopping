@@ -9,7 +9,7 @@ import Foundation
 
 final class ProfileViewModel {
     var outputValidText = Observable("")
-    var outputNickname: Observable<String?> = Observable("")
+    var outputNickname = Observable("")
     var outputValid = Observable(false)
     
     var inputText: Observable<String?> = Observable("")

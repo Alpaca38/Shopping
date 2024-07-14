@@ -45,14 +45,14 @@ private extension ProfileViewController {
             navigationItem.title = LiteralString.editProfile
             let saveButton = UIBarButtonItem(title: LiteralString.save, style: .plain, target: self, action: #selector(saveButtonTapped))
             navigationItem.rightBarButtonItem = saveButton
-            profileView.profileImageView.image = Image.Profile.allCases[UserDefaultsManager.user.image].profileImage
+            profileView.profileImageView.image = UIImage(named: Image.Profile.allCases[UserDefaultsManager.user.image].profileImage)
         }
     }
     
     func setRandomImage() {
         let random = Int.random(in: 0..<Image.Profile.allCases.count)
         UserDefaultsManager.user.image = random
-        profileView.profileImageView.image = Image.Profile.allCases[random].profileImage
+        profileView.profileImageView.image = UIImage(named: Image.Profile.allCases[random].profileImage)
     }
     
     @objc func saveButtonTapped() {
@@ -101,7 +101,7 @@ extension ProfileViewController: ProfileViewDelegate {
 
 extension ProfileViewController: ProfileImageViewDelegate {
     func didSelectCell(index: Int) {
-        profileView.profileImageView.image = Image.Profile.allCases[index].profileImage
+        profileView.profileImageView.image = UIImage(named: Image.Profile.allCases[index].profileImage)
         selectedIndex = index
     }
 }
