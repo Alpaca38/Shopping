@@ -62,7 +62,7 @@ private extension SearchViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if viewModel.outputList.value.contains(searchBar.text!) == false {
+        if !viewModel.outputList.value.contains(searchBar.text!) && !viewModel.outputList.value.isEmpty && viewModel.outputList.value.contains(LiteralString.allSpecialCharacter) {
             viewModel.outputList.value.insert(searchBar.text!, at: 0)
         }
         let vc = SearchResultViewController()
