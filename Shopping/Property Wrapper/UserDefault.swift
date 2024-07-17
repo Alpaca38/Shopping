@@ -10,14 +10,14 @@ import Foundation
 @propertyWrapper
 struct UserDefault<T: Codable> {
     let key: UserDefaultKeys
-    let defaultValue: T?
+    let defaultValue: T
     let isCustomObject: Bool
     let userDefaults = UserDefaults.standard
     
-    var wrappedValue: T? {
+    var wrappedValue: T {
         get {
             if isCustomObject {
-                guard let data = self.userDefaults.object(forKey: key.rawValue) as? Data else { return defaultValue }
+                guard let data = self.userDefaults.data(forKey: key.rawValue) else { return defaultValue }
                 let session = try? JSONDecoder().decode(T.self, from: data)
                 return session ?? defaultValue
             } else {

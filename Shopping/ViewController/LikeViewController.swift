@@ -9,13 +9,7 @@ import UIKit
 
 final class LikeViewController: BaseViewController {
     private let likeView = LikeView()
-    private let repository = SearchItemRepository()
     private let viewModel = LikeViewModel()
-//    private var list: [SearchItemDTO] = [] {
-//        didSet {
-//            likeView.collectionView.reloadData()
-//        }
-//    }
     
     override func loadView() {
         likeView.searchBar.delegate = self
@@ -26,7 +20,7 @@ final class LikeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repository.printRealmURL()
+        viewModel.repository.printRealmURL()
         bindData()
     }
     

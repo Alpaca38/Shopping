@@ -8,7 +8,7 @@
 import Foundation
 
 final class LikeViewModel {
-    private let repository = SearchItemRepository()
+    let repository = SearchItemRepository()
     var outputList: Observable<[SearchItemDTO]> = Observable([])
     
     var inputViewDidLoadTrigger: Observable<Void?> = Observable(nil)
