@@ -10,11 +10,8 @@ import SkeletonView
 import Toast
 
 final class SearchResultViewController: BaseViewController {
-    private let repository = SearchItemRepository()
     private let searchResultView = SearchResultView()
-    private let viewModel = SearchResultViewModel()
-    
-    var searchText: String?
+    let viewModel = SearchResultViewModel()
     
     override func loadView() {
         searchResultView.collectionView.dataSource = self
@@ -27,11 +24,10 @@ final class SearchResultViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = searchText
+        navigationItem.title = viewModel.inputSearchText.value
         setViewModel()
         
         viewModel.inputPage.value = 1
-        viewModel.inputSearchText.value = searchText
         
         bindData()
         
@@ -137,12 +133,10 @@ extension SearchResultViewController: SearchResultCollectionViewCellDelegate {
             let dto = SearchItemDTO(from: searchItem)
             if UserDefaultsManager.likeList.contains(searchItem.productId) {
                 UserDefaultsManager.likeList.remove(searchItem.productId)
-                if let data = repository.fetchItemFromProduct(productID: searchItem.productId) {
-                    repository.deleteItem(data: data)
-                }
+                viewModel.inputUnLike.value = searchItem
             } else {
                 UserDefaultsManager.likeList.insert(searchItem.productId)
-                repository.createItem(data: dto)
+                viewModel.inputLike.value = dto
             }
             searchResultView.collectionView.reloadItems(at: [indexPath])
         }

@@ -66,7 +66,7 @@ extension SearchViewController: UISearchBarDelegate {
             viewModel.outputList.value.insert(searchBar.text!, at: 0)
         }
         let vc = SearchResultViewController()
-        vc.searchText = searchBar.text!
+        vc.viewModel.inputSearchText.value = searchBar.text!
         searchBar.text = nil
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -89,7 +89,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = SearchResultViewController()
-        vc.searchText = viewModel.outputList.value[indexPath.row]
+        vc.viewModel.inputSearchText.value = viewModel.outputList.value[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

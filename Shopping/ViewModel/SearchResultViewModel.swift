@@ -8,6 +8,7 @@
 import Foundation
 
 final class SearchResultViewModel {
+    private let repository = SearchItemRepository()
     var sendValidationError: ((ShoppingQueryError) -> Void)?
     
     var outputList: Observable<SearchShoppingResult?> = Observable(nil)
@@ -17,6 +18,8 @@ final class SearchResultViewModel {
     var inputSearchText: Observable<String?> = Observable(nil)
     var inputPage: Observable<Int> = Observable(1)
     var inputButtonIndex = Observable(0)
+    var inputLike = Observable<SearchItemDTO?>(nil)
+    var inputUnLike = Observable<SearchItem?>(nil)
     
     init() {
         inputSearchText.bind { [weak self] searchText in
@@ -26,6 +29,18 @@ final class SearchResultViewModel {
         inputPage.bind(false) { [weak self] page in
             guard let self else { return }
             getShoppingDataURLSession(searchText: inputSearchText.value, sort: Sort.allCases[inputButtonIndex.value].rawValue)
+        }
+        
+        inputLike.bind { [weak self] data in
+            guard let data else { return }
+            self?.repository.createItem(data: data)
+        }
+        
+        inputUnLike.bind { [weak self] item in
+            guard let self, let item else { return }
+            if let data = repository.fetchItemFromProduct(productID: item.productId) {
+                repository.deleteItem(data: data)
+            }
         }
     }
     
