@@ -27,8 +27,6 @@ final class SearchResultViewController: BaseViewController {
         navigationItem.title = viewModel.inputSearchText.value
         setViewModel()
         
-        viewModel.inputPage.value = 1
-        
         bindData()
         
         searchResultView.collectionView.showSkeleton()
@@ -42,7 +40,8 @@ final class SearchResultViewController: BaseViewController {
 
 private extension SearchResultViewController {
     func bindData() {
-        viewModel.outputList.bind { [weak self] _ in
+        viewModel.outputList.bind { [weak self] data in
+            self?.searchResultView.configure(data: data)
             self?.searchResultView.collectionView.reloadData()
         }
         

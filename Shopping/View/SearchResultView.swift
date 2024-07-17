@@ -15,7 +15,7 @@ final class SearchResultView: BaseView {
     private lazy var selectedButton = simButton
     var selectButtonIndex: Int = 0
     
-    lazy var totalLabel = {
+    private lazy var totalLabel = {
         let label = UILabel()
         label.font = Font.boldTitle
         label.textColor = Color.main
@@ -105,10 +105,13 @@ final class SearchResultView: BaseView {
         layout.sectionInset = UIEdgeInsets(top: sectionSpacing, left: sectionSpacing, bottom: sectionSpacing, right: sectionSpacing)
         return layout
     }
+    
+    func configure(data: SearchShoppingResult?) {
+        totalLabel.text = data?.totalString
+    }
 }
 
-private extension SearchResultView {
-    @objc func filterButtonTapped(_ sender: FilterButton) {
+private extension SearchResultView { @objc func filterButtonTapped(_ sender: FilterButton) {
         guard selectButtonIndex != sender.tag else { return }
         selectedButton.backgroundColor = Color.white
         selectedButton.setTitleColor(Color.black, for: .normal)
