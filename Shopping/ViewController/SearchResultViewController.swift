@@ -49,10 +49,22 @@ private extension SearchResultViewController {
         viewModel.outputList.bind { [weak self] _ in
             self?.searchResultView.collectionView.reloadData()
         }
+        
+        viewModel.outputNetworkSuccess.bind(false) { [weak self] _ in
+            guard let self else { return }
+            searchResultView.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            searchResultView.collectionView.hideSkeleton()
+        }
+        
+        viewModel.outputNetworkError.bind { [weak self] error in
+            guard let error else { return }
+            self?.view.makeToast("\(error.rawValue)", duration: 2.0, position: .center)
+        }
     }
     
     func setViewModel() {
-        viewModel.sendValidationError = { error in
+        viewModel.sendValidationError = { [weak self] error in
+            guard let self else { return }
             switch error {
             case .whitespace:
                 DispatchQueue.main.async {
@@ -62,24 +74,6 @@ private extension SearchResultViewController {
                 DispatchQueue.main.async {
                     self.view.makeToast("특수문자는 검색되지 않습니다. 다시 입력해주세요.", duration: 2.0, position: .center)
                 }
-            }
-        }
-        
-        viewModel.sendNetworkError = { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let success):
-                if viewModel.inputPage.value == 1 {
-                    viewModel.outputList.value = success
-                    if !viewModel.outputList.value!.items.isEmpty {
-                        self.searchResultView.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
-                    }
-                    self.searchResultView.collectionView.hideSkeleton()
-                } else {
-                    self.viewModel.outputList.value?.items.append(contentsOf: success.items)
-                }
-            case .failure(let error):
-                view.makeToast("\(error.rawValue)", duration: 2.0, position: .center)
             }
         }
     }

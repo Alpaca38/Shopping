@@ -9,9 +9,10 @@ import Foundation
 
 final class SearchResultViewModel {
     var sendValidationError: ((ShoppingQueryError) -> Void)?
-    var sendNetworkError: ((Result<SearchShoppingResult, APIError>) -> Void)?
     
     var outputList: Observable<SearchShoppingResult?> = Observable(nil)
+    var outputNetworkSuccess = Observable<Void?>(nil)
+    var outputNetworkError = Observable<APIError?>(nil)
     
     var inputSearchText: Observable<String?> = Observable(nil)
     var inputPage: Observable<Int> = Observable(1)
@@ -59,9 +60,16 @@ final class SearchResultViewModel {
             guard let self else { return }
             switch result {
             case .success(let success):
-                sendNetworkError?(.success(success))
+                if inputPage.value == 1 {
+                    outputList.value = success
+                    if !outputList.value!.items.isEmpty {
+                        outputNetworkSuccess.value = ()
+                    }
+                } else {
+                    outputList.value?.items.append(contentsOf: success.items)
+                }
             case .failure(let failure):
-                sendNetworkError?(.failure(failure))
+                outputNetworkError.value = failure
             }
         }
     }
