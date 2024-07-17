@@ -23,11 +23,6 @@ final class LikeViewController: BaseViewController {
         viewModel.repository.printRealmURL()
         bindData()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        viewModel.outputList.value = repository.fetchAll()
-//    }
 }
 
 private extension LikeViewController {

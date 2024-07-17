@@ -10,6 +10,7 @@ import RealmSwift
 
 final class SearchItemRepository {
     private let realm = try! Realm()
+    private var notificationToken: NotificationToken?
     
     func createItem(data: SearchItemDTO) {
         do {
@@ -52,4 +53,23 @@ final class SearchItemRepository {
     func printRealmURL() {
         print(realm.configuration.fileURL!)
     }
+    
+    func observeFolders(completion: @escaping (RealmCollectionChange<Results<SearchItemDTO>>) -> Void) {
+        let results = realm.objects(SearchItemDTO.self)
+        notificationToken = results.observe { changes in
+            switch changes {
+            case .initial:
+                completion(.initial(results))
+            case .update(_, _, _, _):
+                completion(.update(results, deletions: [], insertions: [], modifications: []))
+            case .error(let error):
+                completion(.error(error))
+            }
+        }
+    }
+    
+    deinit {
+        notificationToken?.invalidate()
+    }
+    
 }
